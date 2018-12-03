@@ -1,0 +1,410 @@
+[
+ {
+   "StateName": "Alabama",
+   "ST": "AL",
+   "StateFIPS": 1,
+   "Population": 4447100,
+   "WhitePopulation": 3162808,
+   "value": 71.12
+ },
+ {
+   "StateName": "Alaska",
+   "ST": "AK",
+   "StateFIPS": 2,
+   "Population": 626932,
+   "WhitePopulation": 434534,
+   "value": 69.31
+ },
+ {
+   "StateName": "Arizona",
+   "ST": "AZ",
+   "StateFIPS": 4,
+   "Population": 5130632,
+   "WhitePopulation": 3873611,
+   "value": 75.5
+ },
+ {
+   "StateName": "Arkansas",
+   "ST": "AR",
+   "StateFIPS": 5,
+   "Population": 2673400,
+   "WhitePopulation": 2138598,
+   "value": 80
+ },
+ {
+   "StateName": "California",
+   "ST": "CA",
+   "StateFIPS": 6,
+   "Population": 33871648,
+   "WhitePopulation": 20170059,
+   "value": 59.55
+ },
+ {
+   "StateName": "Colorado",
+   "ST": "CO",
+   "StateFIPS": 8,
+   "Population": 4301261,
+   "WhitePopulation": 3560005,
+   "value": 82.77
+ },
+ {
+   "StateName": "Connecticut",
+   "ST": "CT",
+   "StateFIPS": 9,
+   "Population": 3405565,
+   "WhitePopulation": 2780355,
+   "value": 81.64
+ },
+ {
+   "StateName": "Delaware",
+   "ST": "DE",
+   "StateFIPS": 10,
+   "Population": 783600,
+   "WhitePopulation": 584773,
+   "value": 74.63
+ },
+ {
+   "StateName": "District of Columbia",
+   "ST": "DC",
+   "StateFIPS": 11,
+   "Population": 572059,
+   "WhitePopulation": 176101,
+   "value": 30.78
+ },
+ {
+   "StateName": "Florida",
+   "ST": "FL",
+   "StateFIPS": 12,
+   "Population": 15982378,
+   "WhitePopulation": 12465029,
+   "value": 77.99
+ },
+ {
+   "StateName": "Georgia",
+   "ST": "GA",
+   "StateFIPS": 13,
+   "Population": 8186453,
+   "WhitePopulation": 5327281,
+   "value": 65.07
+ },
+ {
+   "StateName": "Hawaii",
+   "ST": "HI",
+   "StateFIPS": 15,
+   "Population": 1211537,
+   "WhitePopulation": 294102,
+   "value": 24.28
+ },
+ {
+   "StateName": "Idaho",
+   "ST": "ID",
+   "StateFIPS": 16,
+   "Population": 1293953,
+   "WhitePopulation": 1177304,
+   "value": 90.99
+ },
+ {
+   "StateName": "Illinois",
+   "ST": "IL",
+   "StateFIPS": 17,
+   "Population": 12419293,
+   "WhitePopulation": 9125471,
+   "value": 73.48
+ },
+ {
+   "StateName": "Indiana",
+   "ST": "IN",
+   "StateFIPS": 18,
+   "Population": 6080485,
+   "WhitePopulation": 5320022,
+   "value": 87.49
+ },
+ {
+   "StateName": "Iowa",
+   "ST": "IA",
+   "StateFIPS": 19,
+   "Population": 2926324,
+   "WhitePopulation": 2748640,
+   "value": 93.93
+ },
+ {
+   "StateName": "Kansas",
+   "ST": "KS",
+   "StateFIPS": 20,
+   "Population": 2688418,
+   "WhitePopulation": 2313944,
+   "value": 86.07
+ },
+ {
+   "StateName": "Kentucky",
+   "ST": "KY",
+   "StateFIPS": 21,
+   "Population": 4041769,
+   "WhitePopulation": 3640889,
+   "value": 90.08
+ },
+ {
+   "StateName": "Louisiana",
+   "ST": "LA",
+   "StateFIPS": 22,
+   "Population": 4468976,
+   "WhitePopulation": 2856161,
+   "value": 63.91
+ },
+ {
+   "StateName": "Maine",
+   "ST": "ME",
+   "StateFIPS": 23,
+   "Population": 1274923,
+   "WhitePopulation": 1236014,
+   "value": 96.95
+ },
+ {
+   "StateName": "Maryland",
+   "ST": "MD",
+   "StateFIPS": 24,
+   "Population": 5296486,
+   "WhitePopulation": 3391308,
+   "value": 64.03
+ },
+ {
+   "StateName": "Massachusetts",
+   "ST": "MA",
+   "StateFIPS": 25,
+   "Population": 6349097,
+   "WhitePopulation": 5367286,
+   "value": 84.54
+ },
+ {
+   "StateName": "Michigan",
+   "ST": "MI",
+   "StateFIPS": 26,
+   "Population": 9938444,
+   "WhitePopulation": 7966053,
+   "value": 80.15
+ },
+ {
+   "StateName": "Minnesota",
+   "ST": "MN",
+   "StateFIPS": 27,
+   "Population": 4919479,
+   "WhitePopulation": 4400282,
+   "value": 89.45
+ },
+ {
+   "StateName": "Mississippi",
+   "ST": "MS",
+   "StateFIPS": 28,
+   "Population": 2844658,
+   "WhitePopulation": 1746099,
+   "value": 61.38
+ },
+ {
+   "StateName": "Missouri",
+   "ST": "MO",
+   "StateFIPS": 29,
+   "Population": 5595211,
+   "WhitePopulation": 4748083,
+   "value": 84.86
+ },
+ {
+   "StateName": "Montana",
+   "ST": "MT",
+   "StateFIPS": 30,
+   "Population": 902195,
+   "WhitePopulation": 817229,
+   "value": 90.58
+ },
+ {
+   "StateName": "Nebraska",
+   "ST": "NE",
+   "StateFIPS": 31,
+   "Population": 1711263,
+   "WhitePopulation": 1533261,
+   "value": 89.6
+ },
+ {
+   "StateName": "Nevada",
+   "ST": "NV",
+   "StateFIPS": 32,
+   "Population": 1998257,
+   "WhitePopulation": 1501886,
+   "value": 75.16
+ },
+ {
+   "StateName": "New Hampshire",
+   "ST": "NH",
+   "StateFIPS": 33,
+   "Population": 1235786,
+   "WhitePopulation": 1186851,
+   "value": 96.04
+ },
+ {
+   "StateName": "New Jersey",
+   "ST": "NJ",
+   "StateFIPS": 34,
+   "Population": 8414350,
+   "WhitePopulation": 6104705,
+   "value": 72.55
+ },
+ {
+   "StateName": "New Mexico",
+   "ST": "NM",
+   "StateFIPS": 35,
+   "Population": 1819046,
+   "WhitePopulation": 1214253,
+   "value": 66.75
+ },
+ {
+   "StateName": "New York",
+   "ST": "NY",
+   "StateFIPS": 36,
+   "Population": 18976457,
+   "WhitePopulation": 12893689,
+   "value": 67.95
+ },
+ {
+   "StateName": "North Carolina",
+   "ST": "NC",
+   "StateFIPS": 37,
+   "Population": 8049313,
+   "WhitePopulation": 5804656,
+   "value": 72.11
+ },
+ {
+   "StateName": "North Dakota",
+   "ST": "ND",
+   "StateFIPS": 38,
+   "Population": 642200,
+   "WhitePopulation": 593181,
+   "value": 92.37
+ },
+ {
+   "StateName": "Ohio",
+   "ST": "OH",
+   "StateFIPS": 39,
+   "Population": 11353140,
+   "WhitePopulation": 9645453,
+   "value": 84.96
+ },
+ {
+   "StateName": "Oklahoma",
+   "ST": "OK",
+   "StateFIPS": 40,
+   "Population": 3450654,
+   "WhitePopulation": 2628434,
+   "value": 76.17
+ },
+ {
+   "StateName": "Oregon",
+   "ST": "OR",
+   "StateFIPS": 41,
+   "Population": 3421399,
+   "WhitePopulation": 2961623,
+   "value": 86.56
+ },
+ {
+   "StateName": "Pennsylvania",
+   "ST": "PA",
+   "StateFIPS": 42,
+   "Population": 12281054,
+   "WhitePopulation": 10484203,
+   "value": 85.37
+ },
+ {
+   "StateName": "Rhode Island",
+   "ST": "RI",
+   "StateFIPS": 44,
+   "Population": 1048319,
+   "WhitePopulation": 891191,
+   "value": 85.01
+ },
+ {
+   "StateName": "South Carolina",
+   "ST": "SC",
+   "StateFIPS": 45,
+   "Population": 4012012,
+   "WhitePopulation": 2695560,
+   "value": 67.19
+ },
+ {
+   "StateName": "South Dakota",
+   "ST": "SD",
+   "StateFIPS": 46,
+   "Population": 754844,
+   "WhitePopulation": 669404,
+   "value": 88.68
+ },
+ {
+   "StateName": "Tennessee",
+   "ST": "TN",
+   "StateFIPS": 47,
+   "Population": 5689283,
+   "WhitePopulation": 4563310,
+   "value": 80.21
+ },
+ {
+   "StateName": "Texas",
+   "ST": "TX",
+   "StateFIPS": 48,
+   "Population": 20851820,
+   "WhitePopulation": 14799505,
+   "value": 70.97
+ },
+ {
+   "StateName": "Utah",
+   "ST": "UT",
+   "StateFIPS": 49,
+   "Population": 2233169,
+   "WhitePopulation": 1992975,
+   "value": 89.24
+ },
+ {
+   "StateName": "Vermont",
+   "ST": "VT",
+   "StateFIPS": 50,
+   "Population": 608827,
+   "WhitePopulation": 589208,
+   "value": 96.78
+ },
+ {
+   "StateName": "Virginia",
+   "ST": "VA",
+   "StateFIPS": 51,
+   "Population": 7078515,
+   "WhitePopulation": 5120110,
+   "value": 72.33
+ },
+ {
+   "StateName": "Washington",
+   "ST": "WA",
+   "StateFIPS": 53,
+   "Population": 5894121,
+   "WhitePopulation": 4821823,
+   "value": 81.81
+ },
+ {
+   "StateName": "West Virginia",
+   "ST": "WV",
+   "StateFIPS": 54,
+   "Population": 1808344,
+   "WhitePopulation": 1718777,
+   "value": 95.05
+ },
+ {
+   "StateName": "Wisconsin",
+   "ST": "WI",
+   "StateFIPS": 55,
+   "Population": 5363675,
+   "WhitePopulation": 4769857,
+   "value": 88.93
+ },
+ {
+   "StateName": "Wyoming",
+   "ST": "WY",
+   "StateFIPS": 56,
+   "Population": 493782,
+   "WhitePopulation": 454670,
+   "value": 92.08
+ }
+]

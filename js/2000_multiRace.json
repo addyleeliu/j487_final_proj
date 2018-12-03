@@ -1,0 +1,410 @@
+[
+ {
+   "StateName": "Alabama",
+   "ST": "AL",
+   "StateFIPS": 1,
+   "Population": 4447100,
+   "MultiracialPopulation": 44179,
+   "value": 0.99
+ },
+ {
+   "StateName": "Alaska",
+   "ST": "AK",
+   "StateFIPS": 2,
+   "Population": 626932,
+   "MultiracialPopulation": 34146,
+   "value": 5.45
+ },
+ {
+   "StateName": "Arizona",
+   "ST": "AZ",
+   "StateFIPS": 4,
+   "Population": 5130632,
+   "MultiracialPopulation": 146526,
+   "value": 2.86
+ },
+ {
+   "StateName": "Arkansas",
+   "ST": "AR",
+   "StateFIPS": 5,
+   "Population": 2673400,
+   "MultiracialPopulation": 35744,
+   "value": 1.34
+ },
+ {
+   "StateName": "California",
+   "ST": "CA",
+   "StateFIPS": 6,
+   "Population": 33871648,
+   "MultiracialPopulation": 1607646,
+   "value": 4.75
+ },
+ {
+   "StateName": "Colorado",
+   "ST": "CO",
+   "StateFIPS": 8,
+   "Population": 4301261,
+   "MultiracialPopulation": 122187,
+   "value": 2.84
+ },
+ {
+   "StateName": "Connecticut",
+   "ST": "CT",
+   "StateFIPS": 9,
+   "Population": 3405565,
+   "MultiracialPopulation": 74848,
+   "value": 2.2
+ },
+ {
+   "StateName": "Delaware",
+   "ST": "DE",
+   "StateFIPS": 10,
+   "Population": 783600,
+   "MultiracialPopulation": 13033,
+   "value": 1.66
+ },
+ {
+   "StateName": "District of Columbia",
+   "ST": "DC",
+   "StateFIPS": 11,
+   "Population": 572059,
+   "MultiracialPopulation": 13446,
+   "value": 2.35
+ },
+ {
+   "StateName": "Florida",
+   "ST": "FL",
+   "StateFIPS": 12,
+   "Population": 15982378,
+   "MultiracialPopulation": 376315,
+   "value": 2.35
+ },
+ {
+   "StateName": "Georgia",
+   "ST": "GA",
+   "StateFIPS": 13,
+   "Population": 8186453,
+   "MultiracialPopulation": 114188,
+   "value": 1.39
+ },
+ {
+   "StateName": "Hawaii",
+   "ST": "HI",
+   "StateFIPS": 15,
+   "Population": 1211537,
+   "MultiracialPopulation": 259343,
+   "value": 21.41
+ },
+ {
+   "StateName": "Idaho",
+   "ST": "ID",
+   "StateFIPS": 16,
+   "Population": 1293953,
+   "MultiracialPopulation": 25609,
+   "value": 1.98
+ },
+ {
+   "StateName": "Illinois",
+   "ST": "IL",
+   "StateFIPS": 17,
+   "Population": 12419293,
+   "MultiracialPopulation": 235016,
+   "value": 1.89
+ },
+ {
+   "StateName": "Indiana",
+   "ST": "IN",
+   "StateFIPS": 18,
+   "Population": 6080485,
+   "MultiracialPopulation": 75672,
+   "value": 1.24
+ },
+ {
+   "StateName": "Iowa",
+   "ST": "IA",
+   "StateFIPS": 19,
+   "Population": 2926324,
+   "MultiracialPopulation": 31778,
+   "value": 1.09
+ },
+ {
+   "StateName": "Kansas",
+   "ST": "KS",
+   "StateFIPS": 20,
+   "Population": 2688418,
+   "MultiracialPopulation": 56496,
+   "value": 2.1
+ },
+ {
+   "StateName": "Kentucky",
+   "ST": "KY",
+   "StateFIPS": 21,
+   "Population": 4041769,
+   "MultiracialPopulation": 42443,
+   "value": 1.05
+ },
+ {
+   "StateName": "Louisiana",
+   "ST": "LA",
+   "StateFIPS": 22,
+   "Population": 4468976,
+   "MultiracialPopulation": 48265,
+   "value": 1.08
+ },
+ {
+   "StateName": "Maine",
+   "ST": "ME",
+   "StateFIPS": 23,
+   "Population": 1274923,
+   "MultiracialPopulation": 12647,
+   "value": 0.99
+ },
+ {
+   "StateName": "Maryland",
+   "ST": "MD",
+   "StateFIPS": 24,
+   "Population": 5296486,
+   "MultiracialPopulation": 103587,
+   "value": 1.96
+ },
+ {
+   "StateName": "Massachusetts",
+   "ST": "MA",
+   "StateFIPS": 25,
+   "Population": 6349097,
+   "MultiracialPopulation": 146005,
+   "value": 2.3
+ },
+ {
+   "StateName": "Michigan",
+   "ST": "MI",
+   "StateFIPS": 26,
+   "Population": 9938444,
+   "MultiracialPopulation": 192416,
+   "value": 1.94
+ },
+ {
+   "StateName": "Minnesota",
+   "ST": "MN",
+   "StateFIPS": 27,
+   "Population": 4919479,
+   "MultiracialPopulation": 82742,
+   "value": 1.68
+ },
+ {
+   "StateName": "Mississippi",
+   "ST": "MS",
+   "StateFIPS": 28,
+   "Population": 2844658,
+   "MultiracialPopulation": 20021,
+   "value": 0.7
+ },
+ {
+   "StateName": "Missouri",
+   "ST": "MO",
+   "StateFIPS": 29,
+   "Population": 5595211,
+   "MultiracialPopulation": 82061,
+   "value": 1.47
+ },
+ {
+   "StateName": "Montana",
+   "ST": "MT",
+   "StateFIPS": 30,
+   "Population": 902195,
+   "MultiracialPopulation": 15730,
+   "value": 1.74
+ },
+ {
+   "StateName": "Nebraska",
+   "ST": "NE",
+   "StateFIPS": 31,
+   "Population": 1711263,
+   "MultiracialPopulation": 23953,
+   "value": 1.4
+ },
+ {
+   "StateName": "Nevada",
+   "ST": "NV",
+   "StateFIPS": 32,
+   "Population": 1998257,
+   "MultiracialPopulation": 76428,
+   "value": 3.82
+ },
+ {
+   "StateName": "New Hampshire",
+   "ST": "NH",
+   "StateFIPS": 33,
+   "Population": 1235786,
+   "MultiracialPopulation": 13214,
+   "value": 1.07
+ },
+ {
+   "StateName": "New Jersey",
+   "ST": "NJ",
+   "StateFIPS": 34,
+   "Population": 8414350,
+   "MultiracialPopulation": 213755,
+   "value": 2.54
+ },
+ {
+   "StateName": "New Mexico",
+   "ST": "NM",
+   "StateFIPS": 35,
+   "Population": 1819046,
+   "MultiracialPopulation": 66327,
+   "value": 3.65
+ },
+ {
+   "StateName": "New York",
+   "ST": "NY",
+   "StateFIPS": 36,
+   "Population": 18976457,
+   "MultiracialPopulation": 590182,
+   "value": 3.11
+ },
+ {
+   "StateName": "North Carolina",
+   "ST": "NC",
+   "StateFIPS": 37,
+   "Population": 8049313,
+   "MultiracialPopulation": 103260,
+   "value": 1.28
+ },
+ {
+   "StateName": "North Dakota",
+   "ST": "ND",
+   "StateFIPS": 38,
+   "Population": 642200,
+   "MultiracialPopulation": 7398,
+   "value": 1.15
+ },
+ {
+   "StateName": "Ohio",
+   "ST": "OH",
+   "StateFIPS": 39,
+   "Population": 11353140,
+   "MultiracialPopulation": 157885,
+   "value": 1.39
+ },
+ {
+   "StateName": "Oklahoma",
+   "ST": "OK",
+   "StateFIPS": 40,
+   "Population": 3450654,
+   "MultiracialPopulation": 155985,
+   "value": 4.52
+ },
+ {
+   "StateName": "Oregon",
+   "ST": "OR",
+   "StateFIPS": 41,
+   "Population": 3421399,
+   "MultiracialPopulation": 104745,
+   "value": 3.06
+ },
+ {
+   "StateName": "Pennsylvania",
+   "ST": "PA",
+   "StateFIPS": 42,
+   "Population": 12281054,
+   "MultiracialPopulation": 142224,
+   "value": 1.16
+ },
+ {
+   "StateName": "Rhode Island",
+   "ST": "RI",
+   "StateFIPS": 44,
+   "Population": 1048319,
+   "MultiracialPopulation": 28251,
+   "value": 2.69
+ },
+ {
+   "StateName": "South Carolina",
+   "ST": "SC",
+   "StateFIPS": 45,
+   "Population": 4012012,
+   "MultiracialPopulation": 39950,
+   "value": 1
+ },
+ {
+   "StateName": "South Dakota",
+   "ST": "SD",
+   "StateFIPS": 46,
+   "Population": 754844,
+   "MultiracialPopulation": 10156,
+   "value": 1.35
+ },
+ {
+   "StateName": "Tennessee",
+   "ST": "TN",
+   "StateFIPS": 47,
+   "Population": 5689283,
+   "MultiracialPopulation": 63109,
+   "value": 1.11
+ },
+ {
+   "StateName": "Texas",
+   "ST": "TX",
+   "StateFIPS": 48,
+   "Population": 20851820,
+   "MultiracialPopulation": 514633,
+   "value": 2.47
+ },
+ {
+   "StateName": "Utah",
+   "ST": "UT",
+   "StateFIPS": 49,
+   "Population": 2233169,
+   "MultiracialPopulation": 47195,
+   "value": 2.11
+ },
+ {
+   "StateName": "Vermont",
+   "ST": "VT",
+   "StateFIPS": 50,
+   "Population": 608827,
+   "MultiracialPopulation": 7335,
+   "value": 1.2
+ },
+ {
+   "StateName": "Virginia",
+   "ST": "VA",
+   "StateFIPS": 51,
+   "Population": 7078515,
+   "MultiracialPopulation": 143069,
+   "value": 2.02
+ },
+ {
+   "StateName": "Washington",
+   "ST": "WA",
+   "StateFIPS": 53,
+   "Population": 5894121,
+   "MultiracialPopulation": 213519,
+   "value": 3.62
+ },
+ {
+   "StateName": "West Virginia",
+   "ST": "WV",
+   "StateFIPS": 54,
+   "Population": 1808344,
+   "MultiracialPopulation": 15788,
+   "value": 0.87
+ },
+ {
+   "StateName": "Wisconsin",
+   "ST": "WI",
+   "StateFIPS": 55,
+   "Population": 5363675,
+   "MultiracialPopulation": 66895,
+   "value": 1.25
+ },
+ {
+   "StateName": "Wyoming",
+   "ST": "WY",
+   "StateFIPS": 56,
+   "Population": 493782,
+   "MultiracialPopulation": 8883,
+   "value": 1.8
+ }
+]
