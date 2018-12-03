@@ -11,21 +11,37 @@
 
   <h1>j487 Final Project</h1>
 
-  <select id="selectRace" onchange="changeRaceMap()">
-    <option value="aian">American Indian and Alaska Native Alone
-    <option value="asian">Asian Alone
-    <option value="boaa">Black or African American Alone
-    <option value="multiRace">Multiracial
-    <option value="nhpi">Native Hawaiian and Other Pacific Islander Alone
-    <option value="otherRace">Some Other Race Alone
-    <option value="white">White Alone
-  </select>
+  <div id="heatMapsContainer">
+    <h2>Population Distributions by Race</h2>
 
-  <br><br>
+    <select id="selectRace" onchange="changeRaceMap()">
+      <option value="aian">American Indian and Alaska Native Alone
+      <option value="asian">Asian Alone
+      <option value="boaa">Black or African American Alone
+      <option value="multiRace">Multiracial
+      <option value="nhpi">Native Hawaiian and Other Pacific Islander Alone
+      <option value="otherRace">Some Other Race Alone
+      <option value="white">White Alone
+    </select>
 
-  <div id="2010heatMapContainer"></div>
-  <div id="2000heatMapContainer"></div>
+    <br><br>
 
+    <div id="2010heatMapContainer"></div>
+
+    <br>
+    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris efficitur semper est nec molestie. Praesent ac lacus consectetur, molestie massa et, tincidunt felis. Ut nunc leo, sollicitudin et velit eget, pulvinar tempus arcu. Fusce blandit, nisl vitae consequat efficitur, tellus quam venenatis turpis, vitae mattis orci purus vitae eros. Nullam non accumsan lectus, at eleifend justo. Aenean malesuada ex leo, et efficitur quam pretium vel. Praesent volutpat, ipsum vel rhoncus gravida, massa tellus tincidunt dui, eget accumsan ipsum nibh quis arcu. Quisque ante neque, consequat ut sem id, vulputate finibus metus.</div>
+    <br>
+
+    <div id="2000heatMapContainer"></div>
+    <br>
+
+    <div>(Source: <a href="https://www.census.gov/data/developers/data-sets/decennial-census.2010.html" target="_blank">2010 United States Census</a> and <a href="https://www.census.gov/data/developers/data-sets/decennial-census.2000.html" target="_blank">2000 United States Census</a>)</div>
+  </div>
+
+  <div id="languagesContainer">
+    <h2>Language Statistics</h2>
+    <div>(Source: <a href="https://www.census.gov/data/developers/data-sets/language-stats.html" target="_blank">American Community Survey (ACS) 2009-2013</a>)</div>
+  </div>
 
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="crossorigin="anonymous"></script>
   <script src="js/config.js"></script>
