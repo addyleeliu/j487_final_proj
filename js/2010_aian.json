@@ -1,0 +1,410 @@
+[
+ {
+   "StateName": "Alabama",
+   "ST": "AL",
+   "StateFIPS": 1,
+   "Population": 4779736,
+   "AIANPopulation": 28218,
+   "value": 0.59
+ },
+ {
+   "StateName": "Alaska",
+   "ST": "AK",
+   "StateFIPS": 2,
+   "Population": 710231,
+   "AIANPopulation": 104871,
+   "value": 14.77
+ },
+ {
+   "StateName": "Arizona",
+   "ST": "AZ",
+   "StateFIPS": 4,
+   "Population": 6392017,
+   "AIANPopulation": 296529,
+   "value": 4.64
+ },
+ {
+   "StateName": "Arkansas",
+   "ST": "AR",
+   "StateFIPS": 5,
+   "Population": 2915918,
+   "AIANPopulation": 22248,
+   "value": 0.76
+ },
+ {
+   "StateName": "California",
+   "ST": "CA",
+   "StateFIPS": 6,
+   "Population": 37253956,
+   "AIANPopulation": 362801,
+   "value": 0.97
+ },
+ {
+   "StateName": "Colorado",
+   "ST": "CO",
+   "StateFIPS": 8,
+   "Population": 5029196,
+   "AIANPopulation": 56010,
+   "value": 1.11
+ },
+ {
+   "StateName": "Connecticut",
+   "ST": "CT",
+   "StateFIPS": 9,
+   "Population": 3574097,
+   "AIANPopulation": 11256,
+   "value": 0.31
+ },
+ {
+   "StateName": "Delaware",
+   "ST": "DE",
+   "StateFIPS": 10,
+   "Population": 897934,
+   "AIANPopulation": 4181,
+   "value": 0.47
+ },
+ {
+   "StateName": "District of Columbia",
+   "ST": "DC",
+   "StateFIPS": 11,
+   "Population": 601723,
+   "AIANPopulation": 2079,
+   "value": 0.35
+ },
+ {
+   "StateName": "Florida",
+   "ST": "FL",
+   "StateFIPS": 12,
+   "Population": 18801310,
+   "AIANPopulation": 71458,
+   "value": 0.38
+ },
+ {
+   "StateName": "Georgia",
+   "ST": "GA",
+   "StateFIPS": 13,
+   "Population": 9687653,
+   "AIANPopulation": 32151,
+   "value": 0.33
+ },
+ {
+   "StateName": "Hawaii",
+   "ST": "HI",
+   "StateFIPS": 15,
+   "Population": 1360301,
+   "AIANPopulation": 4164,
+   "value": 0.31
+ },
+ {
+   "StateName": "Idaho",
+   "ST": "ID",
+   "StateFIPS": 16,
+   "Population": 1567582,
+   "AIANPopulation": 21441,
+   "value": 1.37
+ },
+ {
+   "StateName": "Illinois",
+   "ST": "IL",
+   "StateFIPS": 17,
+   "Population": 12830632,
+   "AIANPopulation": 43963,
+   "value": 0.34
+ },
+ {
+   "StateName": "Indiana",
+   "ST": "IN",
+   "StateFIPS": 18,
+   "Population": 6483802,
+   "AIANPopulation": 18462,
+   "value": 0.28
+ },
+ {
+   "StateName": "Iowa",
+   "ST": "IA",
+   "StateFIPS": 19,
+   "Population": 3046355,
+   "AIANPopulation": 11084,
+   "value": 0.36
+ },
+ {
+   "StateName": "Kansas",
+   "ST": "KS",
+   "StateFIPS": 20,
+   "Population": 2853118,
+   "AIANPopulation": 28150,
+   "value": 0.99
+ },
+ {
+   "StateName": "Kentucky",
+   "ST": "KY",
+   "StateFIPS": 21,
+   "Population": 4339367,
+   "AIANPopulation": 10120,
+   "value": 0.23
+ },
+ {
+   "StateName": "Louisiana",
+   "ST": "LA",
+   "StateFIPS": 22,
+   "Population": 4533372,
+   "AIANPopulation": 30579,
+   "value": 0.67
+ },
+ {
+   "StateName": "Maine",
+   "ST": "ME",
+   "StateFIPS": 23,
+   "Population": 1328361,
+   "AIANPopulation": 8568,
+   "value": 0.65
+ },
+ {
+   "StateName": "Maryland",
+   "ST": "MD",
+   "StateFIPS": 24,
+   "Population": 5773552,
+   "AIANPopulation": 20420,
+   "value": 0.35
+ },
+ {
+   "StateName": "Massachusetts",
+   "ST": "MA",
+   "StateFIPS": 25,
+   "Population": 6547629,
+   "AIANPopulation": 18850,
+   "value": 0.29
+ },
+ {
+   "StateName": "Michigan",
+   "ST": "MI",
+   "StateFIPS": 26,
+   "Population": 9883640,
+   "AIANPopulation": 62007,
+   "value": 0.63
+ },
+ {
+   "StateName": "Minnesota",
+   "ST": "MN",
+   "StateFIPS": 27,
+   "Population": 5303925,
+   "AIANPopulation": 60916,
+   "value": 1.15
+ },
+ {
+   "StateName": "Mississippi",
+   "ST": "MS",
+   "StateFIPS": 28,
+   "Population": 2967297,
+   "AIANPopulation": 15030,
+   "value": 0.51
+ },
+ {
+   "StateName": "Missouri",
+   "ST": "MO",
+   "StateFIPS": 29,
+   "Population": 5988927,
+   "AIANPopulation": 27376,
+   "value": 0.46
+ },
+ {
+   "StateName": "Montana",
+   "ST": "MT",
+   "StateFIPS": 30,
+   "Population": 989415,
+   "AIANPopulation": 62555,
+   "value": 6.32
+ },
+ {
+   "StateName": "Nebraska",
+   "ST": "NE",
+   "StateFIPS": 31,
+   "Population": 1826341,
+   "AIANPopulation": 18427,
+   "value": 1.01
+ },
+ {
+   "StateName": "Nevada",
+   "ST": "NV",
+   "StateFIPS": 32,
+   "Population": 2700551,
+   "AIANPopulation": 32062,
+   "value": 1.19
+ },
+ {
+   "StateName": "New Hampshire",
+   "ST": "NH",
+   "StateFIPS": 33,
+   "Population": 1316470,
+   "AIANPopulation": 3150,
+   "value": 0.24
+ },
+ {
+   "StateName": "New Jersey",
+   "ST": "NJ",
+   "StateFIPS": 34,
+   "Population": 8791894,
+   "AIANPopulation": 29026,
+   "value": 0.33
+ },
+ {
+   "StateName": "New Mexico",
+   "ST": "NM",
+   "StateFIPS": 35,
+   "Population": 2059179,
+   "AIANPopulation": 193222,
+   "value": 9.38
+ },
+ {
+   "StateName": "New York",
+   "ST": "NY",
+   "StateFIPS": 36,
+   "Population": 19378102,
+   "AIANPopulation": 106906,
+   "value": 0.55
+ },
+ {
+   "StateName": "North Carolina",
+   "ST": "NC",
+   "StateFIPS": 37,
+   "Population": 9535483,
+   "AIANPopulation": 122110,
+   "value": 1.28
+ },
+ {
+   "StateName": "North Dakota",
+   "ST": "ND",
+   "StateFIPS": 38,
+   "Population": 672591,
+   "AIANPopulation": 36591,
+   "value": 5.44
+ },
+ {
+   "StateName": "Ohio",
+   "ST": "OH",
+   "StateFIPS": 39,
+   "Population": 11536504,
+   "AIANPopulation": 25292,
+   "value": 0.22
+ },
+ {
+   "StateName": "Oklahoma",
+   "ST": "OK",
+   "StateFIPS": 40,
+   "Population": 3751351,
+   "AIANPopulation": 321687,
+   "value": 8.58
+ },
+ {
+   "StateName": "Oregon",
+   "ST": "OR",
+   "StateFIPS": 41,
+   "Population": 3831074,
+   "AIANPopulation": 53203,
+   "value": 1.39
+ },
+ {
+   "StateName": "Pennsylvania",
+   "ST": "PA",
+   "StateFIPS": 42,
+   "Population": 12702379,
+   "AIANPopulation": 26843,
+   "value": 0.21
+ },
+ {
+   "StateName": "Rhode Island",
+   "ST": "RI",
+   "StateFIPS": 44,
+   "Population": 1052567,
+   "AIANPopulation": 6058,
+   "value": 0.58
+ },
+ {
+   "StateName": "South Carolina",
+   "ST": "SC",
+   "StateFIPS": 45,
+   "Population": 4625364,
+   "AIANPopulation": 19524,
+   "value": 0.42
+ },
+ {
+   "StateName": "South Dakota",
+   "ST": "SD",
+   "StateFIPS": 46,
+   "Population": 814180,
+   "AIANPopulation": 71817,
+   "value": 8.82
+ },
+ {
+   "StateName": "Tennessee",
+   "ST": "TN",
+   "StateFIPS": 47,
+   "Population": 6346105,
+   "AIANPopulation": 19994,
+   "value": 0.32
+ },
+ {
+   "StateName": "Texas",
+   "ST": "TX",
+   "StateFIPS": 48,
+   "Population": 25145561,
+   "AIANPopulation": 170972,
+   "value": 0.68
+ },
+ {
+   "StateName": "Utah",
+   "ST": "UT",
+   "StateFIPS": 49,
+   "Population": 2763885,
+   "AIANPopulation": 32927,
+   "value": 1.19
+ },
+ {
+   "StateName": "Vermont",
+   "ST": "VT",
+   "StateFIPS": 50,
+   "Population": 625741,
+   "AIANPopulation": 2207,
+   "value": 0.35
+ },
+ {
+   "StateName": "Virginia",
+   "ST": "VA",
+   "StateFIPS": 51,
+   "Population": 8001024,
+   "AIANPopulation": 29225,
+   "value": 0.37
+ },
+ {
+   "StateName": "Washington",
+   "ST": "WA",
+   "StateFIPS": 53,
+   "Population": 6724540,
+   "AIANPopulation": 103869,
+   "value": 1.54
+ },
+ {
+   "StateName": "West Virginia",
+   "ST": "WV",
+   "StateFIPS": 54,
+   "Population": 1852994,
+   "AIANPopulation": 3787,
+   "value": 0.2
+ },
+ {
+   "StateName": "Wisconsin",
+   "ST": "WI",
+   "StateFIPS": 55,
+   "Population": 5686986,
+   "AIANPopulation": 54526,
+   "value": 0.96
+ },
+ {
+   "StateName": "Wyoming",
+   "ST": "WY",
+   "StateFIPS": 56,
+   "Population": 563626,
+   "AIANPopulation": 13336,
+   "value": 2.37
+ }
+]
