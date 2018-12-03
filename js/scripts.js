@@ -558,4 +558,29 @@ $(function(){
     });
   }); // END OF MAP OF WHITE POPULATION PERCENTAGES
 
-});
+}); // END OF DOCUMENT READY
+
+function changeRaceMap() {
+    var selectedRace = document.getElementById("selectRace").value;
+    if (selectedRace == "aian") {
+      console.log("user wants to see the American Indian and Alaska Native Alone heat map");
+    }
+    else if (selectedRace == "asian") {
+      console.log("user wants to see the Asian Alone heat map");
+    }
+    else if (selectedRace == "boaa") {
+      console.log("user wants to see the Black or African American Alone heat map");
+    }
+    else if (selectedRace == "multiRace") {
+      console.log("user wants to see the Multiracial heat map");
+    }
+    else if (selectedRace == "nhpi") {
+      console.log("user wants to see the Native Hawaiian and Other Pacific Islander Alone heat map");
+    }
+    else if (selectedRace == "otherRace") {
+      console.log("user wants to see the Some Other Race Alone heat map");
+    }
+    else if (selectedRace == "white") {
+      console.log("user wants to see the White Alone heat map");
+    }
+}
