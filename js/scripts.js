@@ -193,10 +193,46 @@ $(function(){
     }
   }); // CLOSE CALL TO US CENSUS API FOR POPULATION COUNTS OF PEOPLE OF TWO OR MORE RACES
 
+  makeAIANmap(); // ON INITIAL LOAD
 
+}); // END OF DOCUMENT READY
+
+function changeRaceMap() {
+    var selectedRace = document.getElementById("selectRace").value;
+    if (selectedRace == "aian") {
+      console.log("user wants to see the American Indian and Alaska Native Alone heat map");
+      makeAIANmap();
+    }
+    else if (selectedRace == "asian") {
+      console.log("user wants to see the Asian Alone heat map");
+      makeAsianMap();
+    }
+    else if (selectedRace == "boaa") {
+      console.log("user wants to see the Black or African American Alone heat map");
+      makeBOAAmap();
+    }
+    else if (selectedRace == "multiRace") {
+      console.log("user wants to see the Multiracial heat map");
+      makeMultiRaceMap();
+    }
+    else if (selectedRace == "nhpi") {
+      console.log("user wants to see the Native Hawaiian and Other Pacific Islander Alone heat map");
+      makeNHPImap();
+    }
+    else if (selectedRace == "otherRace") {
+      console.log("user wants to see the Some Other Race Alone heat map");
+      makeOtherRaceMap();
+    }
+    else if (selectedRace == "white") {
+      console.log("user wants to see the White Alone heat map");
+      makeWhiteMap();
+    }
+}
+
+function makeAIANmap() {
   // MAP OF AMERICAN INDIAN AND ALASKA NATIVE POPULATION PERCENTAGES
   $.getJSON('js/2010_aian.json', function(data) {
-    Highcharts.mapChart('2010aianChart', {
+    Highcharts.mapChart('heatMapContainer', {
         chart: {
             map: 'countries/us/us-all',
             borderWidth: 0.8
@@ -228,9 +264,6 @@ $(function(){
             ]
         },
         series: [{
-            animation: {
-                duration: 1000
-            },
             data: data,
             joinBy: ['postal-code', 'ST'],
             dataLabels: {
@@ -245,10 +278,11 @@ $(function(){
         }]
     });
   }); // END OF MAP OF AMERICAN INDIAN AND ALASKA NATIVE POPULATION PERCENTAGES
-
+}
+function makeAsianMap() {
   // MAP OF ASIAN POPULATION PERCENTAGES
   $.getJSON('js/2010_asian.json', function(data) {
-    Highcharts.mapChart('2010asianChart', {
+    Highcharts.mapChart('heatMapContainer', {
         chart: {
             map: 'countries/us/us-all',
             borderWidth: 0.8
@@ -280,9 +314,6 @@ $(function(){
             ]
         },
         series: [{
-            animation: {
-                duration: 1000
-            },
             data: data,
             joinBy: ['postal-code', 'ST'],
             dataLabels: {
@@ -297,10 +328,11 @@ $(function(){
         }]
     });
   }); // END OF MAP OF ASIAN POPULATION PERCENTAGES
-
+}
+function makeBOAAmap() {
   // MAP OF BLACK OR AFRICAN AMERICAN ALONE POPULATION PERCENTAGES
   $.getJSON('js/2010_boaa.json', function(data) {
-    Highcharts.mapChart('2010boaaChart', {
+    Highcharts.mapChart('heatMapContainer', {
         chart: {
             map: 'countries/us/us-all',
             borderWidth: 0.8
@@ -332,9 +364,6 @@ $(function(){
             ]
         },
         series: [{
-            animation: {
-                duration: 1000
-            },
             data: data,
             joinBy: ['postal-code', 'ST'],
             dataLabels: {
@@ -349,10 +378,11 @@ $(function(){
         }]
     });
   }); // END OF MAP OF BLACK OR AFRICAN AMERICAN ALONE POPULATION PERCENTAGES
-
+}
+function makeMultiRaceMap() {
   // MAP OF MULTIRACIAL POPULATION PERCENTAGES
   $.getJSON('js/2010_multiRace.json', function(data) {
-    Highcharts.mapChart('2010multiRaceChart', {
+    Highcharts.mapChart('heatMapContainer', {
         chart: {
             map: 'countries/us/us-all',
             borderWidth: 0.8
@@ -384,9 +414,6 @@ $(function(){
             ]
         },
         series: [{
-            animation: {
-                duration: 1000
-            },
             data: data,
             joinBy: ['postal-code', 'ST'],
             dataLabels: {
@@ -401,10 +428,11 @@ $(function(){
         }]
     });
   }); // END OF MAP OF MULTIRACIAL POPULATION PERCENTAGES
-
+}
+function makeNHPImap() {
   // MAP OF NATIVE HAWAIIAN AND OTHER PACIFIC ISLANDER ALONE POPULATION PERCENTAGES
   $.getJSON('js/2010_nhpi.json', function(data) {
-    Highcharts.mapChart('2010nhpiChart', {
+    Highcharts.mapChart('heatMapContainer', {
         chart: {
             map: 'countries/us/us-all',
             borderWidth: 0.8
@@ -436,9 +464,6 @@ $(function(){
             ]
         },
         series: [{
-            animation: {
-                duration: 1000
-            },
             data: data,
             joinBy: ['postal-code', 'ST'],
             dataLabels: {
@@ -453,10 +478,11 @@ $(function(){
         }]
     });
   }); // END OF MAP OF NATIVE HAWAIIAN AND OTHER PACIFIC ISLANDER ALONE POPULATION PERCENTAGES
-
+}
+function makeOtherRaceMap() {
   // MAP OF SOME OTHER RACE ALONE POPULATION PERCENTAGES
   $.getJSON('js/2010_otherRace.json', function(data) {
-    Highcharts.mapChart('2010otherRaceChart', {
+    Highcharts.mapChart('heatMapContainer', {
         chart: {
             map: 'countries/us/us-all',
             borderWidth: 0.8
@@ -488,9 +514,6 @@ $(function(){
             ]
         },
         series: [{
-            animation: {
-                duration: 1000
-            },
             data: data,
             joinBy: ['postal-code', 'ST'],
             dataLabels: {
@@ -505,10 +528,11 @@ $(function(){
         }]
     });
   }); // END OF MAP OF SOME OTHER RACE ALONE POPULATION PERCENTAGES
-
+}
+function makeWhiteMap() {
   // MAP OF WHITE ALONE POPULATION PERCENTAGES
   $.getJSON('js/2010_white.json', function(data) {
-    Highcharts.mapChart('2010whiteChart', {
+    Highcharts.mapChart('heatMapContainer', {
         chart: {
             map: 'countries/us/us-all',
             borderWidth: 0.8
@@ -540,9 +564,6 @@ $(function(){
             ]
         },
         series: [{
-            animation: {
-                duration: 1000
-            },
             data: data,
             joinBy: ['postal-code', 'ST'],
             dataLabels: {
@@ -557,30 +578,4 @@ $(function(){
         }]
     });
   }); // END OF MAP OF WHITE POPULATION PERCENTAGES
-
-}); // END OF DOCUMENT READY
-
-function changeRaceMap() {
-    var selectedRace = document.getElementById("selectRace").value;
-    if (selectedRace == "aian") {
-      console.log("user wants to see the American Indian and Alaska Native Alone heat map");
-    }
-    else if (selectedRace == "asian") {
-      console.log("user wants to see the Asian Alone heat map");
-    }
-    else if (selectedRace == "boaa") {
-      console.log("user wants to see the Black or African American Alone heat map");
-    }
-    else if (selectedRace == "multiRace") {
-      console.log("user wants to see the Multiracial heat map");
-    }
-    else if (selectedRace == "nhpi") {
-      console.log("user wants to see the Native Hawaiian and Other Pacific Islander Alone heat map");
-    }
-    else if (selectedRace == "otherRace") {
-      console.log("user wants to see the Some Other Race Alone heat map");
-    }
-    else if (selectedRace == "white") {
-      console.log("user wants to see the White Alone heat map");
-    }
 }
