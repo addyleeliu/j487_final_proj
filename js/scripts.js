@@ -452,6 +452,11 @@ function makeAIANmap() {
                 [1, '#000022']
             ]
         },
+        credits: {
+            enabled: true,
+            text: 'Source: 2010 U.S. Census',
+            href: 'javascript:window.open("https://www.census.gov/data/developers/data-sets/decennial-census.2010.html", "_blank")'
+        },
         series: [{
             data: data,
             joinBy: ['postal-code', 'ST'],
@@ -500,6 +505,11 @@ function makeAIANmap() {
                 [0.67, '#4444FF'],
                 [1, '#000022']
             ]
+        },
+        credits: {
+            enabled: true,
+            text: 'Source: 2000 U.S. Census',
+            href: 'javascript:window.open("https://www.census.gov/data/developers/data-sets/decennial-census.2000.html", "_blank")'
         },
         series: [{
             data: data,
@@ -551,6 +561,11 @@ function makeAsianMap() {
                 [1, '#000022']
             ]
         },
+        credits: {
+            enabled: true,
+            text: 'Source: 2010 U.S. Census',
+            href: 'javascript:window.open("https://www.census.gov/data/developers/data-sets/decennial-census.2010.html", "_blank")'
+        },
         series: [{
             data: data,
             joinBy: ['postal-code', 'ST'],
@@ -599,6 +614,11 @@ function makeAsianMap() {
                 [0.67, '#4444FF'],
                 [1, '#000022']
             ]
+        },
+        credits: {
+            enabled: true,
+            text: 'Source: 2000 U.S. Census',
+            href: 'javascript:window.open("https://www.census.gov/data/developers/data-sets/decennial-census.2000.html", "_blank")'
         },
         series: [{
             data: data,
@@ -650,6 +670,11 @@ function makeBOAAmap() {
                 [1, '#000022']
             ]
         },
+        credits: {
+            enabled: true,
+            text: 'Source: 2010 U.S. Census',
+            href: 'javascript:window.open("https://www.census.gov/data/developers/data-sets/decennial-census.2010.html", "_blank")'
+        },
         series: [{
             data: data,
             joinBy: ['postal-code', 'ST'],
@@ -698,6 +723,11 @@ function makeBOAAmap() {
                 [0.67, '#4444FF'],
                 [1, '#000022']
             ]
+        },
+        credits: {
+            enabled: true,
+            text: 'Source: 2000 U.S. Census',
+            href: 'javascript:window.open("https://www.census.gov/data/developers/data-sets/decennial-census.2000.html", "_blank")'
         },
         series: [{
             data: data,
@@ -749,6 +779,11 @@ function makeMultiRaceMap() {
                 [1, '#000022']
             ]
         },
+        credits: {
+            enabled: true,
+            text: 'Source: 2010 U.S. Census',
+            href: 'javascript:window.open("https://www.census.gov/data/developers/data-sets/decennial-census.2010.html", "_blank")'
+        },
         series: [{
             data: data,
             joinBy: ['postal-code', 'ST'],
@@ -797,6 +832,11 @@ function makeMultiRaceMap() {
                 [0.67, '#4444FF'],
                 [1, '#000022']
             ]
+        },
+        credits: {
+            enabled: true,
+            text: 'Source: 2000 U.S. Census',
+            href: 'javascript:window.open("https://www.census.gov/data/developers/data-sets/decennial-census.2000.html", "_blank")'
         },
         series: [{
             data: data,
@@ -848,6 +888,11 @@ function makeNHPImap() {
                 [1, '#000022']
             ]
         },
+        credits: {
+            enabled: true,
+            text: 'Source: 2010 U.S. Census',
+            href: 'javascript:window.open("https://www.census.gov/data/developers/data-sets/decennial-census.2010.html", "_blank")'
+        },
         series: [{
             data: data,
             joinBy: ['postal-code', 'ST'],
@@ -896,6 +941,11 @@ function makeNHPImap() {
                 [0.67, '#4444FF'],
                 [1, '#000022']
             ]
+        },
+        credits: {
+            enabled: true,
+            text: 'Source: 2000 U.S. Census',
+            href: 'javascript:window.open("https://www.census.gov/data/developers/data-sets/decennial-census.2000.html", "_blank")'
         },
         series: [{
             data: data,
@@ -947,6 +997,11 @@ function makeOtherRaceMap() {
                 [1, '#000022']
             ]
         },
+        credits: {
+            enabled: true,
+            text: 'Source: 2010 U.S. Census',
+            href: 'javascript:window.open("https://www.census.gov/data/developers/data-sets/decennial-census.2010.html", "_blank")'
+        },
         series: [{
             data: data,
             joinBy: ['postal-code', 'ST'],
@@ -995,6 +1050,11 @@ function makeOtherRaceMap() {
                 [0.67, '#4444FF'],
                 [1, '#000022']
             ]
+        },
+        credits: {
+            enabled: true,
+            text: 'Source: 2000 U.S. Census',
+            href: 'javascript:window.open("https://www.census.gov/data/developers/data-sets/decennial-census.2000.html", "_blank")'
         },
         series: [{
             data: data,
@@ -1046,6 +1106,11 @@ function makeWhiteMap() {
                 [1, '#000022']
             ]
         },
+        credits: {
+            enabled: true,
+            text: 'Source: 2010 U.S. Census',
+            href: 'javascript:window.open("https://www.census.gov/data/developers/data-sets/decennial-census.2010.html", "_blank")'
+        },
         series: [{
             data: data,
             joinBy: ['postal-code', 'ST'],
@@ -1094,6 +1159,11 @@ function makeWhiteMap() {
                 [0.67, '#4444FF'],
                 [1, '#000022']
             ]
+        },
+        credits: {
+            enabled: true,
+            text: 'Source: 2000 U.S. Census',
+            href: 'javascript:window.open("https://www.census.gov/data/developers/data-sets/decennial-census.2000.html", "_blank")'
         },
         series: [{
             data: data,
