@@ -3,6 +3,10 @@
 <head>
   <title>Final Project</title>
   <link rel="stylesheet" href="css/styles.css" type="text/css"/>
+  <!--Start Responsive Horizontal Bar Chart jQuery Plugin Styling-->
+    <link rel="stylesheet" href="build/css/horizBarChart.css" type="text/css"/>
+    <link rel="stylesheet" href="build/css/style.css" type="text/css"/>
+  <!--End Responsive Horizontal Bar Chart jQuery Plugin Styling-->
   <link rel="icon"
     type="image/png"
     href="img/favicon.png"/>
@@ -15,12 +19,41 @@
     <h2>Language Statistics for Americans Age Five and Above (2013)</h2>
     <div>79% speak only English at home</div>
     <div>21% speak a language other than English at home</div>
-
-    <canvas id="language-barchart"></canvas>
     <br>
+    <!--Start of horizontal bar chart-->
+    <div class="chart-horiz clearfix">
+      <!-- Actual bar chart -->
+      <ul class="chart">
+        <li class="title" title="Top Languages Spoken at Home (Other Than English) by Number of Speakers"></li>
+
+        <li class="current" title="Chinese*"><span class="bar" data-number="2896766"></span><span class="number">2,896,766</span></li>
+        <li class="current" title="Tagalog"><span class="bar" data-number="1613346"></span><span class="number">1,613,346</span></li>
+        <li class="current" title="Vietnamese"><span class="bar" data-number="1399936"></span><span class="number">1,399,936</span></li>
+        <li class="current" title="French**"><span class="bar" data-number="1307742"></span><span class="number">1,307,742</span></li>
+        <li class="current" title="Korean"><span class="bar" data-number="1117343"></span><span class="number">1,117,343</span></li>
+        <li class="current" title="German"><span class="bar" data-number="1063275"></span><span class="number">1,063,275</span></li>
+        <li class="current" title="Arabic"><span class="bar" data-number="924374"></span><span class="number">924,374</span></li>
+        <li class="current" title="Russian"><span class="bar" data-number="879434"></span><span class="number">879,434</span></li>
+        <li class="current" title="Italian"><span class="bar" data-number="708966"></span><span class="number">708,966</span></li>
+        <li class="current" title="Portuguese"><span class="bar" data-number="692500"></span><span class="number">692,500</span></li>
+        <li class="current" title="Hindi"><span class="bar" data-number="643337"></span><span class="number">643,337</span></li>
+        <li class="current" title="Polish"><span class="bar" data-number="580153"></span><span class="number">580,153</span></li>
+        <li class="current" title="Japanese"><span class="bar" data-number="449475"></span><span class="number">449,475</span></li>
+        <li class="current" title="Urdu"><span class="bar" data-number="397502"></span><span class="number">397,502</span></li>
+        <li class="current" title="Persian"><span class="bar" data-number="391113"></span><span class="number">391,113</span></li>
+        <li class="current" title="Gujarati"><span class="bar" data-number="373253"></span><span class="number">373,253</span></li>
+        <li class="current" title="Greek"><span class="bar" data-number="304932"></span><span class="number">304,932</span></li>
+        <li class="current" title="Bengali"><span class="bar" data-number="257740"></span><span class="number">257,740</span></li>
+        <li class="current" title="Panjabi"><span class="bar" data-number="253740"></span><span class="number">253,740</span></li>
+        <li class="current" title="Telugu"><span class="bar" data-number="247760"></span><span class="number">247,760</span></li>
+        <li class="current" title="Armenian"><span class="bar" data-number="237840"></span><span class="number">237,840</span></li>
+        <li class="current" title="Hmong"><span class="bar" data-number="214943"></span><span class="number">214,943</span></li>
+        <li class="current" title="Hebrew"><span class="bar" data-number="212747"></span><span class="number">212,747</span></li>
+      </ul>
+    </div>
+    <!--End of horizontal bar chart-->
     <div>* Includes Cantonese, Mandarin, and other Chinese languages</div>
     <div>** Includes Patois and Cajun</div>
-
     <br>
     <div>(Source: <a href="https://www.census.gov/data/developers/data-sets/language-stats.html" target="_blank">American Community Survey (ACS) 2009-2013</a>)</div>
   </div>
@@ -73,6 +106,10 @@
   <script src="https://code.highcharts.com/mapdata/countries/us/us-all.js"></script>
 <!--End Highmaps-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.js"></script> <!--Chart.js-->
+  <!--Start Responsive Horizontal Bar Chart jQuery Plugin-->
+    <script src="build/js/jquery.min.js"></script>
+    <script src="build/js/jquery.horizBarChart.min.js"></script>
+  <!--End Responsive Horizontal Bar Chart jQuery Plugin-->
   <script src="js/scripts.js"></script>
 </body>
 </html>

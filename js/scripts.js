@@ -2,109 +2,13 @@ $(function(){
 
   console.log('Scripts loaded!');
 
-  // START OF MAKING A CHART OF THE MOST COMMON LANGUAGES SPOKEN AT HOME BESIDES ENGLISH
-  new Chart(document.getElementById("language-barchart"), {
-    type: 'horizontalBar',
-    data: {
-      labels: [
-        "Spanish",
-        "Chinese*",
-        "Tagalog",
-        "Vietnamese",
-        "French**",
-        "Korean",
-        "German",
-        "Arabic",
-        "Russian",
-        "Italian",
-        "Portuguese",
-        "Hindi",
-        "Polish",
-        "Japanese",
-        "Urdu",
-        "Persian",
-        "Gujarati",
-        "Greek",
-        "Bengali",
-        "Panjabi",
-        "Telugu",
-        "Armenian",
-        "Hmong",
-        "Hebrew"
-        ],
-      datasets: [
-        {
-          label: "Number of Speakers",
-          backgroundColor: [
-            "#ffd1dc",
-            "#ffd1dc",
-            "#ffd1dc",
-            "#ffd1dc",
-            "#ffd1dc",
-            "#ffd1dc",
-            "#ffd1dc",
-            "#ffd1dc",
-            "#ffd1dc",
-            "#ffd1dc",
-            "#ffd1dc",
-            "#ffd1dc",
-            "#ffd1dc",
-            "#ffd1dc",
-            "#ffd1dc",
-            "#ffd1dc",
-            "#ffd1dc",
-            "#ffd1dc",
-            "#ffd1dc",
-            "#ffd1dc",
-            "#ffd1dc",
-            "#ffd1dc",
-            "#ffd1dc",
-            "#ffd1dc"
-          ],
-          data: [
-            37458470,
-            2896766,
-            1613346,
-            1399936,
-            1307742,
-            1117343,
-            1063275,
-            924374,
-            879434,
-            708966,
-            692500,
-            643337,
-            580153,
-            449475,
-            397502,
-            391113,
-            373253,
-            304932,
-            257740,
-            253740,
-            247760,
-            237840,
-            214943,
-            212747
-          ]
-        }
-      ]
-    },
-    options: {
-      legend: { display: false },
-      title: {
-        display: true,
-        text: 'Top Languages Spoken at Home (Other Than English) by Number of Speakers'
-      }
-    }
-  });
-  // END OF MAKING A CHART OF THE MOST COMMON LANGUAGES SPOKEN AT HOME BESIDES ENGLISH
-
-  var censusKey = config.CENSUS_KEY;
-
-  var sum;
+  $('.chart').horizBarChart(); // MAKING A CHART OF THE MOST COMMON LANGUAGES SPOKEN AT HOME BESIDES ENGLISH AND SPANISH
 
   // START 2010 US CENSUS API
+
+        var censusKey = config.CENSUS_KEY;
+        var censusData;
+        var sum;
         var statePopURL = 'https://api.census.gov/data/2010/sf1?get=P0010001,NAME&for=state:*&key=' + censusKey;
         var whiteURL = 'https://api.census.gov/data/2010/sf1?get=P012A001&for=state:*&key=' + censusKey;
         var boaaURL = 'https://api.census.gov/data/2010/sf1?get=P012B001&for=state:*&key=' + censusKey;
@@ -113,7 +17,6 @@ $(function(){
         var nhpiURL = 'https://api.census.gov/data/2010/sf1?get=P012E001&for=state:*&key=' + censusKey;
         var otherRaceURL = 'https://api.census.gov/data/2010/sf1?get=P012F001&for=state:*&key=' + censusKey;
         var multiRaceURL = 'https://api.census.gov/data/2010/sf1?get=P012G001&for=state:*&key=' + censusKey;
-        var censusData;
 
         // CALL TO US CENSUS API FOR POPULATION TOTAL OF EACH STATE
         $.ajax({
