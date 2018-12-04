@@ -35,7 +35,7 @@ $(function(){
             console.log('state population data did not load!');
           },
           complete: function(msg) {
-            console.log('AJAX request for state population counts completed!')
+            console.log('AJAX request from US Census API for state population counts completed!')
           }
         }); // CLOSE CALL TO US CENSUS API FOR POPULATION TOTAL OF EACH STATE
 
@@ -57,7 +57,7 @@ $(function(){
             console.log('race data did not load!');
           },
           complete: function(msg) {
-            console.log('AJAX request for population counts of white people completed!')
+            console.log('AJAX request from US Census API for population counts of white people completed!')
           }
         }); // CLOSE CALL TO US CENSUS API FOR POPULATION COUNTS OF WHITE PEOPLE
 
@@ -79,7 +79,7 @@ $(function(){
             console.log('race data did not load!');
           },
           complete: function(msg) {
-            console.log('AJAX request for population counts of Black or African American people completed!')
+            console.log('AJAX request from US Census API for population counts of Black or African American people completed!')
           }
         }); // CLOSE CALL TO US CENSUS API FOR POPULATION COUNTS OF BLACK OR AFRICAN AMERICAN PEOPLE
 
@@ -101,7 +101,7 @@ $(function(){
             console.log('race data did not load!');
           },
           complete: function(msg) {
-            console.log('AJAX request for population counts of Asian people completed!')
+            console.log('AJAX request from US Census API for population counts of Asian people completed!')
           }
         }); // CLOSE CALL TO US CENSUS API FOR POPULATION COUNTS OF ASIAN PEOPLE
 
@@ -123,7 +123,7 @@ $(function(){
             console.log('race data did not load!');
           },
           complete: function(msg) {
-            console.log('AJAX request for population counts of American Indian and Alaska Native people completed!')
+            console.log('AJAX request from US Census API for population counts of American Indian and Alaska Native people completed!')
           }
         }); // CLOSE CALL TO US CENSUS API FOR POPULATION COUNTS OF AMERICAN INDIAN AND ALASKA NATIVE PEOPLE
 
@@ -145,7 +145,7 @@ $(function(){
             console.log('race data did not load!');
           },
           complete: function(msg) {
-            console.log('AJAX request for population counts of Native Hawaiian and Other Pacific Islander people completed!')
+            console.log('AJAX request from US Census API for population counts of Native Hawaiian and Other Pacific Islander people completed!')
           }
         }); // CLOSE CALL TO US CENSUS API FOR POPULATION COUNTS OF NATIVE HAWAIIAN AND OTHER PACIFIC ISLANDER PEOPLE
 
@@ -167,7 +167,7 @@ $(function(){
             console.log('race data did not load!');
           },
           complete: function(msg) {
-            console.log('AJAX request for population counts of people of some other race completed!')
+            console.log('AJAX request from US Census API for population counts of people of some other race completed!')
           }
         }); // CLOSE CALL TO US CENSUS API FOR POPULATION COUNTS OF PEOPLE OF SOME OTHER RACE
 
@@ -189,7 +189,7 @@ $(function(){
             console.log('race data did not load!');
           },
           complete: function(msg) {
-            console.log('AJAX request for population counts of people of two or more races completed!')
+            console.log('AJAX request from US Census API for population counts of people of two or more races completed!')
           }
         }); // CLOSE CALL TO US CENSUS API FOR POPULATION COUNTS OF PEOPLE OF TWO OR MORE RACES
   // END 2010 US CENSUS API
@@ -223,7 +223,7 @@ $(function(){
             console.log('2000 state population data did not load!');
           },
           complete: function(msg) {
-            console.log('AJAX request for 2000 state population counts completed!')
+            console.log('AJAX request from US Census API for 2000 state population counts completed!')
           }
         }); // CLOSE CALL TO US CENSUS API FOR POPULATION TOTAL OF EACH STATE
 
@@ -245,7 +245,7 @@ $(function(){
             console.log('race data did not load!');
           },
           complete: function(msg) {
-            console.log('AJAX request for population counts of white people completed!')
+            console.log('AJAX request from US Census API for population counts of white people completed!')
           }
         }); // CLOSE CALL TO US CENSUS API FOR POPULATION COUNTS OF WHITE PEOPLE
 
@@ -267,7 +267,7 @@ $(function(){
             console.log('race data did not load!');
           },
           complete: function(msg) {
-            console.log('AJAX request for population counts of Black or African American people completed!')
+            console.log('AJAX request from US Census API for population counts of Black or African American people completed!')
           }
         }); // CLOSE CALL TO US CENSUS API FOR POPULATION COUNTS OF BLACK OR AFRICAN AMERICAN PEOPLE
 
@@ -289,7 +289,7 @@ $(function(){
             console.log('race data did not load!');
           },
           complete: function(msg) {
-            console.log('AJAX request for population counts of Asian people completed!')
+            console.log('AJAX request from US Census API for population counts of Asian people completed!')
           }
         }); // CLOSE CALL TO US CENSUS API FOR POPULATION COUNTS OF ASIAN PEOPLE
 
@@ -311,7 +311,7 @@ $(function(){
             console.log('race data did not load!');
           },
           complete: function(msg) {
-            console.log('AJAX request for population counts of American Indian and Alaska Native people completed!')
+            console.log('AJAX request from US Census API for population counts of American Indian and Alaska Native people completed!')
           }
         }); // CLOSE CALL TO US CENSUS API FOR POPULATION COUNTS OF AMERICAN INDIAN AND ALASKA NATIVE PEOPLE
 
@@ -333,7 +333,7 @@ $(function(){
             console.log('race data did not load!');
           },
           complete: function(msg) {
-            console.log('AJAX request for population counts of Native Hawaiian and Other Pacific Islander people completed!')
+            console.log('AJAX request from US Census API for population counts of Native Hawaiian and Other Pacific Islander people completed!')
           }
         }); // CLOSE CALL TO US CENSUS API FOR POPULATION COUNTS OF NATIVE HAWAIIAN AND OTHER PACIFIC ISLANDER PEOPLE
 
@@ -355,7 +355,7 @@ $(function(){
             console.log('race data did not load!');
           },
           complete: function(msg) {
-            console.log('AJAX request for population counts of people of some other race completed!')
+            console.log('AJAX request from US Census API for population counts of people of some other race completed!')
           }
         }); // CLOSE CALL TO US CENSUS API FOR POPULATION COUNTS OF PEOPLE OF SOME OTHER RACE
 
@@ -377,7 +377,7 @@ $(function(){
             console.log('race data did not load!');
           },
           complete: function(msg) {
-            console.log('AJAX request for population counts of people of two or more races completed!')
+            console.log('AJAX request from US Census API for population counts of people of two or more races completed!')
           }
         }); // CLOSE CALL TO US CENSUS API FOR POPULATION COUNTS OF PEOPLE OF TWO OR MORE RACES
   // END 2000 US CENSUS API
@@ -403,7 +403,7 @@ $(function(){
             console.log('ACS data (languages in detailed language list) did not load!');
           },
           complete: function(msg) {
-            console.log('AJAX request for ACS data (languages in detailed language list) completed!')
+            console.log('AJAX request from 2013 Language Statistics API for ACS data (languages in detailed language list) completed!')
           }
         }); // CLOSE CALL TO 2013 ACS API FOR ALL THE LANGUAGES IN DETAILED LANGUAGE LIST
 
@@ -420,7 +420,7 @@ $(function(){
             console.log('ACS data (languages in additional language list) did not load!');
           },
           complete: function(msg) {
-            console.log('AJAX request for ACS data (languages in additional language list) completed!')
+            console.log('AJAX request from 2013 Language Statistics API for ACS data (languages in additional language list) completed!')
           }
         }); // CLOSE CALL TO 2013 ACS API FOR ALL THE LANGUAGES IN ADDITIONAL LANGUAGE LIST
 
