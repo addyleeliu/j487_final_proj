@@ -390,22 +390,40 @@ $(function(){
         var acsLan39URL = 'https://api.census.gov/data/2013/language?get=EST,LAN39&for=us&key=' + censusKey; // gets estimated # of speakers in the U.S. for all the languages in additional language list
         var acsData;
 
-        // CALL TO 2013 ACS API (TEST)
+        // CALL TO 2013 ACS API FOR ALL THE LANGUAGES IN DETAILED LANGUAGE LIST
         $.ajax({
           type: 'GET',
           dataType: 'json',
           data: acsData,
-          url: acsTestURL,
+          url: acsLanURL,
           success: function(acsData) {
             console.log(acsData);
           },
           error: function(msg) {
-            console.log('ACS data did not load!');
+            console.log('ACS data (languages in detailed language list) did not load!');
           },
           complete: function(msg) {
-            console.log('AJAX request for ACS data completed!')
+            console.log('AJAX request for ACS data (languages in detailed language list) completed!')
           }
-        }); // CLOSE CALL TO 2013 ACS API (TEST)
+        }); // CLOSE CALL TO 2013 ACS API FOR ALL THE LANGUAGES IN DETAILED LANGUAGE LIST
+
+        // CALL TO 2013 ACS API FOR ALL THE LANGUAGES IN ADDITIONAL LANGUAGE LIST
+        $.ajax({
+          type: 'GET',
+          dataType: 'json',
+          data: acsData,
+          url: acsLan39URL,
+          success: function(acsData) {
+            console.log(acsData);
+          },
+          error: function(msg) {
+            console.log('ACS data (languages in additional language list) did not load!');
+          },
+          complete: function(msg) {
+            console.log('AJAX request for ACS data (languages in additional language list) completed!')
+          }
+        }); // CLOSE CALL TO 2013 ACS API FOR ALL THE LANGUAGES IN ADDITIONAL LANGUAGE LIST
+
   // END 2013 AMERICAN COMMUNITY SURVEY API
 
 }); // END OF DOCUMENT READY
