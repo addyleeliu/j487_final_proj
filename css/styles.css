@@ -2,8 +2,14 @@ body {
   margin: 2.5% 10% 2.5% 10%;
 }
 
-#heatMapsContainer, #languagesContainer {
+#change, #heatMapsContainer, #languagesContainer, #future {
   border: 1px solid black;
   padding: 2.5% 10% 2.5% 10%;
   margin: 2.5% 0% 2.5% 0%;
+}
+
+img {
+  width: 60%;
+  height: auto;
+  margin: 2% 0% 2% 0%;
 }

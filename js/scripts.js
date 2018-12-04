@@ -194,7 +194,7 @@ $(function(){
         }); // CLOSE CALL TO US CENSUS API FOR POPULATION COUNTS OF PEOPLE OF TWO OR MORE RACES
   // END 2010 US CENSUS API
 
-  // START 2000 US CENSUS API //
+  // START 2000 US CENSUS API
         var statePopURL2000 = 'https://api.census.gov/data/2000/sf1?get=P001001,NAME&for=state:*&key=' + censusKey;
         var whiteURL2000 = 'https://api.census.gov/data/2000/sf1?get=P003003&for=state:*&key=' + censusKey;
         var boaaURL2000 = 'https://api.census.gov/data/2000/sf1?get=P003004&for=state:*&key=' + censusKey;
@@ -380,804 +380,830 @@ $(function(){
             console.log('AJAX request for population counts of people of two or more races completed!')
           }
         }); // CLOSE CALL TO US CENSUS API FOR POPULATION COUNTS OF PEOPLE OF TWO OR MORE RACES
-  // END 2000 US CENSUS API //
+  // END 2000 US CENSUS API
 
   makeAIANmap(); // ON INITIAL LOAD
 
+
+  // START 2013 AMERICAN COMMUNITY SURVEY API
+        var acsLanURL = 'https://api.census.gov/data/2013/language?get=EST,LAN&for=us&key=' + censusKey; // gets estimated # of speakers in the U.S. for all the languages in detailed language list
+        var acsLan39URL = 'https://api.census.gov/data/2013/language?get=EST,LAN39&for=us&key=' + censusKey; // gets estimated # of speakers in the U.S. for all the languages in additional language list
+        var acsData;
+
+        // CALL TO 2013 ACS API (TEST)
+        $.ajax({
+          type: 'GET',
+          dataType: 'json',
+          data: acsData,
+          url: acsTestURL,
+          success: function(acsData) {
+            console.log(acsData);
+          },
+          error: function(msg) {
+            console.log('ACS data did not load!');
+          },
+          complete: function(msg) {
+            console.log('AJAX request for ACS data completed!')
+          }
+        }); // CLOSE CALL TO 2013 ACS API (TEST)
+  // END 2013 AMERICAN COMMUNITY SURVEY API
+
 }); // END OF DOCUMENT READY
 
-function changeRaceMap() {
-    var selectedRace = document.getElementById("selectRace").value;
-    if (selectedRace == "aian") {
-      console.log("user wants to see the American Indian and Alaska Native Alone heat map");
-      makeAIANmap();
-    }
-    else if (selectedRace == "asian") {
-      console.log("user wants to see the Asian Alone heat map");
-      makeAsianMap();
-    }
-    else if (selectedRace == "boaa") {
-      console.log("user wants to see the Black or African American Alone heat map");
-      makeBOAAmap();
-    }
-    else if (selectedRace == "multiRace") {
-      console.log("user wants to see the Multiracial heat map");
-      makeMultiRaceMap();
-    }
-    else if (selectedRace == "nhpi") {
-      console.log("user wants to see the Native Hawaiian and Other Pacific Islander Alone heat map");
-      makeNHPImap();
-    }
-    else if (selectedRace == "otherRace") {
-      console.log("user wants to see the Some Other Race Alone heat map");
-      makeOtherRaceMap();
-    }
-    else if (selectedRace == "white") {
-      console.log("user wants to see the White Alone heat map");
-      makeWhiteMap();
-    }
-}
+// START RACIAL HEAT MAP FUNCTIONS
+        function changeRaceMap() {
+            var selectedRace = document.getElementById("selectRace").value;
+            if (selectedRace == "aian") {
+              console.log("user wants to see the American Indian and Alaska Native Alone heat map");
+              makeAIANmap();
+            }
+            else if (selectedRace == "asian") {
+              console.log("user wants to see the Asian Alone heat map");
+              makeAsianMap();
+            }
+            else if (selectedRace == "boaa") {
+              console.log("user wants to see the Black or African American Alone heat map");
+              makeBOAAmap();
+            }
+            else if (selectedRace == "multiRace") {
+              console.log("user wants to see the Multiracial heat map");
+              makeMultiRaceMap();
+            }
+            else if (selectedRace == "nhpi") {
+              console.log("user wants to see the Native Hawaiian and Other Pacific Islander Alone heat map");
+              makeNHPImap();
+            }
+            else if (selectedRace == "otherRace") {
+              console.log("user wants to see the Some Other Race Alone heat map");
+              makeOtherRaceMap();
+            }
+            else if (selectedRace == "white") {
+              console.log("user wants to see the White Alone heat map");
+              makeWhiteMap();
+            }
+        }
 
-function makeAIANmap() {
-  // MAKE 2010 MAP OF AMERICAN INDIAN AND ALASKA NATIVE POPULATION PERCENTAGES
-  $.getJSON('js/2010_aian.json', function(data) {
-    Highcharts.mapChart('2010heatMapContainer', {
-        chart: {
-            map: 'countries/us/us-all',
-            borderWidth: 0.8
-        },
-        title: {
-            margin: 35,
-            text: '2010 Distribution of American Indian and Alaska Native Alone Population'
-        },
-        legend: {
-            layout: 'horizontal',
-            borderWidth: 0,
-            backgroundColor: 'rgba(255,255,255,0.85)',
-            floating: true,
-            verticalAlign: 'top',
-            y: 25
-        },
-        mapNavigation: {
-            enabled: true
-        },
-        colorAxis: {
-            min: 1,
-            type: 'logarithmic',
-            minColor: '#EEEEFF',
-            maxColor: '#000022',
-            stops: [
-                [0, '#EFEFFF'],
-                [0.67, '#4444FF'],
-                [1, '#000022']
-            ]
-        },
-        credits: {
-            enabled: true,
-            text: 'Source: 2010 U.S. Census',
-            href: 'javascript:window.open("https://www.census.gov/data/developers/data-sets/decennial-census.2010.html", "_blank")'
-        },
-        series: [{
-            data: data,
-            joinBy: ['postal-code', 'ST'],
-            dataLabels: {
-                enabled: true,
-                color: '#FFFFFF',
-                format: '{point.ST}'
-            },
-            name: '2010 U.S. Census',
-            tooltip: {
-                pointFormat: '{point.value}% of people in {point.StateName} self-identified as American Indian and Alaska Native alone'
-            }
-        }]
-    });
-  }); // END OF MAKING 2010 MAP OF AMERICAN INDIAN AND ALASKA NATIVE POPULATION PERCENTAGES
+        function makeAIANmap() {
+          // MAKE 2010 MAP OF AMERICAN INDIAN AND ALASKA NATIVE POPULATION PERCENTAGES
+          $.getJSON('js/2010_aian.json', function(data) {
+            Highcharts.mapChart('2010heatMapContainer', {
+                chart: {
+                    map: 'countries/us/us-all',
+                    borderWidth: 0.8
+                },
+                title: {
+                    margin: 35,
+                    text: '2010 Distribution of American Indian and Alaska Native Alone Population'
+                },
+                legend: {
+                    layout: 'horizontal',
+                    borderWidth: 0,
+                    backgroundColor: 'rgba(255,255,255,0.85)',
+                    floating: true,
+                    verticalAlign: 'top',
+                    y: 25
+                },
+                mapNavigation: {
+                    enabled: true
+                },
+                colorAxis: {
+                    min: 1,
+                    type: 'logarithmic',
+                    minColor: '#EEEEFF',
+                    maxColor: '#000022',
+                    stops: [
+                        [0, '#EFEFFF'],
+                        [0.67, '#4444FF'],
+                        [1, '#000022']
+                    ]
+                },
+                credits: {
+                    enabled: true,
+                    text: 'Source: 2010 U.S. Census',
+                    href: 'javascript:window.open("https://www.census.gov/data/developers/data-sets/decennial-census.2010.html", "_blank")'
+                },
+                series: [{
+                    data: data,
+                    joinBy: ['postal-code', 'ST'],
+                    dataLabels: {
+                        enabled: true,
+                        color: '#FFFFFF',
+                        format: '{point.ST}'
+                    },
+                    name: '2010 U.S. Census',
+                    tooltip: {
+                        pointFormat: '{point.value}% of people in {point.StateName} self-identified as American Indian and Alaska Native alone'
+                    }
+                }]
+            });
+          }); // END OF MAKING 2010 MAP OF AMERICAN INDIAN AND ALASKA NATIVE POPULATION PERCENTAGES
 
-  // MAKE 2000 MAP OF AMERICAN INDIAN AND ALASKA NATIVE POPULATION PERCENTAGES
-  $.getJSON('js/2000_aian.json', function(data) {
-    Highcharts.mapChart('2000heatMapContainer', {
-        chart: {
-            map: 'countries/us/us-all',
-            borderWidth: 0.8
-        },
-        title: {
-            margin: 35,
-            text: '2000 Distribution of American Indian and Alaska Native Alone Population'
-        },
-        legend: {
-            layout: 'horizontal',
-            borderWidth: 0,
-            backgroundColor: 'rgba(255,255,255,0.85)',
-            floating: true,
-            verticalAlign: 'top',
-            y: 25
-        },
-        mapNavigation: {
-            enabled: true
-        },
-        colorAxis: {
-            min: 1,
-            type: 'logarithmic',
-            minColor: '#EEEEFF',
-            maxColor: '#000022',
-            stops: [
-                [0, '#EFEFFF'],
-                [0.67, '#4444FF'],
-                [1, '#000022']
-            ]
-        },
-        credits: {
-            enabled: true,
-            text: 'Source: 2000 U.S. Census',
-            href: 'javascript:window.open("https://www.census.gov/data/developers/data-sets/decennial-census.2000.html", "_blank")'
-        },
-        series: [{
-            data: data,
-            joinBy: ['postal-code', 'ST'],
-            dataLabels: {
-                enabled: true,
-                color: '#FFFFFF',
-                format: '{point.ST}'
-            },
-            name: '2000 U.S. Census',
-            tooltip: {
-                pointFormat: '{point.value}% of people in {point.StateName} self-identified as American Indian and Alaska Native alone'
-            }
-        }]
-    });
-  }); // END OF MAKING 2000 MAP OF AMERICAN INDIAN AND ALASKA NATIVE POPULATION PERCENTAGES
-}
-function makeAsianMap() {
-  // MAKE 2010 MAP OF ASIAN POPULATION PERCENTAGES
-  $.getJSON('js/2010_asian.json', function(data) {
-    Highcharts.mapChart('2010heatMapContainer', {
-        chart: {
-            map: 'countries/us/us-all',
-            borderWidth: 0.8
-        },
-        title: {
-            margin: 35,
-            text: '2010 Distribution of Asian Alone Population'
-        },
-        legend: {
-            layout: 'horizontal',
-            borderWidth: 0,
-            backgroundColor: 'rgba(255,255,255,0.85)',
-            floating: true,
-            verticalAlign: 'top',
-            y: 25
-        },
-        mapNavigation: {
-            enabled: true
-        },
-        colorAxis: {
-            min: 1,
-            type: 'logarithmic',
-            minColor: '#EEEEFF',
-            maxColor: '#000022',
-            stops: [
-                [0, '#EFEFFF'],
-                [0.67, '#4444FF'],
-                [1, '#000022']
-            ]
-        },
-        credits: {
-            enabled: true,
-            text: 'Source: 2010 U.S. Census',
-            href: 'javascript:window.open("https://www.census.gov/data/developers/data-sets/decennial-census.2010.html", "_blank")'
-        },
-        series: [{
-            data: data,
-            joinBy: ['postal-code', 'ST'],
-            dataLabels: {
-                enabled: true,
-                color: '#FFFFFF',
-                format: '{point.ST}'
-            },
-            name: '2010 U.S. Census',
-            tooltip: {
-                pointFormat: '{point.value}% of people in {point.StateName} self-identified as Asian alone'
-            }
-        }]
-    });
-  }); // END OF MAKING 2010 MAP OF ASIAN POPULATION PERCENTAGES
+          // MAKE 2000 MAP OF AMERICAN INDIAN AND ALASKA NATIVE POPULATION PERCENTAGES
+          $.getJSON('js/2000_aian.json', function(data) {
+            Highcharts.mapChart('2000heatMapContainer', {
+                chart: {
+                    map: 'countries/us/us-all',
+                    borderWidth: 0.8
+                },
+                title: {
+                    margin: 35,
+                    text: '2000 Distribution of American Indian and Alaska Native Alone Population'
+                },
+                legend: {
+                    layout: 'horizontal',
+                    borderWidth: 0,
+                    backgroundColor: 'rgba(255,255,255,0.85)',
+                    floating: true,
+                    verticalAlign: 'top',
+                    y: 25
+                },
+                mapNavigation: {
+                    enabled: true
+                },
+                colorAxis: {
+                    min: 1,
+                    type: 'logarithmic',
+                    minColor: '#EEEEFF',
+                    maxColor: '#000022',
+                    stops: [
+                        [0, '#EFEFFF'],
+                        [0.67, '#4444FF'],
+                        [1, '#000022']
+                    ]
+                },
+                credits: {
+                    enabled: true,
+                    text: 'Source: 2000 U.S. Census',
+                    href: 'javascript:window.open("https://www.census.gov/data/developers/data-sets/decennial-census.2000.html", "_blank")'
+                },
+                series: [{
+                    data: data,
+                    joinBy: ['postal-code', 'ST'],
+                    dataLabels: {
+                        enabled: true,
+                        color: '#FFFFFF',
+                        format: '{point.ST}'
+                    },
+                    name: '2000 U.S. Census',
+                    tooltip: {
+                        pointFormat: '{point.value}% of people in {point.StateName} self-identified as American Indian and Alaska Native alone'
+                    }
+                }]
+            });
+          }); // END OF MAKING 2000 MAP OF AMERICAN INDIAN AND ALASKA NATIVE POPULATION PERCENTAGES
+        }
+        function makeAsianMap() {
+          // MAKE 2010 MAP OF ASIAN POPULATION PERCENTAGES
+          $.getJSON('js/2010_asian.json', function(data) {
+            Highcharts.mapChart('2010heatMapContainer', {
+                chart: {
+                    map: 'countries/us/us-all',
+                    borderWidth: 0.8
+                },
+                title: {
+                    margin: 35,
+                    text: '2010 Distribution of Asian Alone Population'
+                },
+                legend: {
+                    layout: 'horizontal',
+                    borderWidth: 0,
+                    backgroundColor: 'rgba(255,255,255,0.85)',
+                    floating: true,
+                    verticalAlign: 'top',
+                    y: 25
+                },
+                mapNavigation: {
+                    enabled: true
+                },
+                colorAxis: {
+                    min: 1,
+                    type: 'logarithmic',
+                    minColor: '#EEEEFF',
+                    maxColor: '#000022',
+                    stops: [
+                        [0, '#EFEFFF'],
+                        [0.67, '#4444FF'],
+                        [1, '#000022']
+                    ]
+                },
+                credits: {
+                    enabled: true,
+                    text: 'Source: 2010 U.S. Census',
+                    href: 'javascript:window.open("https://www.census.gov/data/developers/data-sets/decennial-census.2010.html", "_blank")'
+                },
+                series: [{
+                    data: data,
+                    joinBy: ['postal-code', 'ST'],
+                    dataLabels: {
+                        enabled: true,
+                        color: '#FFFFFF',
+                        format: '{point.ST}'
+                    },
+                    name: '2010 U.S. Census',
+                    tooltip: {
+                        pointFormat: '{point.value}% of people in {point.StateName} self-identified as Asian alone'
+                    }
+                }]
+            });
+          }); // END OF MAKING 2010 MAP OF ASIAN POPULATION PERCENTAGES
 
-  // MAKE 2000 MAP OF ASIAN POPULATION PERCENTAGES
-  $.getJSON('js/2000_asian.json', function(data) {
-    Highcharts.mapChart('2000heatMapContainer', {
-        chart: {
-            map: 'countries/us/us-all',
-            borderWidth: 0.8
-        },
-        title: {
-            margin: 35,
-            text: '2000 Distribution of Asian Alone Population'
-        },
-        legend: {
-            layout: 'horizontal',
-            borderWidth: 0,
-            backgroundColor: 'rgba(255,255,255,0.85)',
-            floating: true,
-            verticalAlign: 'top',
-            y: 25
-        },
-        mapNavigation: {
-            enabled: true
-        },
-        colorAxis: {
-            min: 1,
-            type: 'logarithmic',
-            minColor: '#EEEEFF',
-            maxColor: '#000022',
-            stops: [
-                [0, '#EFEFFF'],
-                [0.67, '#4444FF'],
-                [1, '#000022']
-            ]
-        },
-        credits: {
-            enabled: true,
-            text: 'Source: 2000 U.S. Census',
-            href: 'javascript:window.open("https://www.census.gov/data/developers/data-sets/decennial-census.2000.html", "_blank")'
-        },
-        series: [{
-            data: data,
-            joinBy: ['postal-code', 'ST'],
-            dataLabels: {
-                enabled: true,
-                color: '#FFFFFF',
-                format: '{point.ST}'
-            },
-            name: '2000 U.S. Census',
-            tooltip: {
-                pointFormat: '{point.value}% of people in {point.StateName} self-identified as Asian alone'
-            }
-        }]
-    });
-  }); // END OF MAKING 2000 MAP OF ASIAN POPULATION PERCENTAGES
-}
-function makeBOAAmap() {
-  // MAKE 2010 MAP OF BLACK OR AFRICAN AMERICAN ALONE POPULATION PERCENTAGES
-  $.getJSON('js/2010_boaa.json', function(data) {
-    Highcharts.mapChart('2010heatMapContainer', {
-        chart: {
-            map: 'countries/us/us-all',
-            borderWidth: 0.8
-        },
-        title: {
-            margin: 35,
-            text: '2010 Distribution of Black or African American Alone Population'
-        },
-        legend: {
-            layout: 'horizontal',
-            borderWidth: 0,
-            backgroundColor: 'rgba(255,255,255,0.85)',
-            floating: true,
-            verticalAlign: 'top',
-            y: 25
-        },
-        mapNavigation: {
-            enabled: true
-        },
-        colorAxis: {
-            min: 1,
-            type: 'logarithmic',
-            minColor: '#EEEEFF',
-            maxColor: '#000022',
-            stops: [
-                [0, '#EFEFFF'],
-                [0.67, '#4444FF'],
-                [1, '#000022']
-            ]
-        },
-        credits: {
-            enabled: true,
-            text: 'Source: 2010 U.S. Census',
-            href: 'javascript:window.open("https://www.census.gov/data/developers/data-sets/decennial-census.2010.html", "_blank")'
-        },
-        series: [{
-            data: data,
-            joinBy: ['postal-code', 'ST'],
-            dataLabels: {
-                enabled: true,
-                color: '#FFFFFF',
-                format: '{point.ST}'
-            },
-            name: '2010 U.S. Census',
-            tooltip: {
-                pointFormat: '{point.value}% of people in {point.StateName} self-identified as Black or African American alone'
-            }
-        }]
-    });
-  }); // END OF MAKING 2010 MAP OF BLACK OR AFRICAN AMERICAN ALONE POPULATION PERCENTAGES
+          // MAKE 2000 MAP OF ASIAN POPULATION PERCENTAGES
+          $.getJSON('js/2000_asian.json', function(data) {
+            Highcharts.mapChart('2000heatMapContainer', {
+                chart: {
+                    map: 'countries/us/us-all',
+                    borderWidth: 0.8
+                },
+                title: {
+                    margin: 35,
+                    text: '2000 Distribution of Asian Alone Population'
+                },
+                legend: {
+                    layout: 'horizontal',
+                    borderWidth: 0,
+                    backgroundColor: 'rgba(255,255,255,0.85)',
+                    floating: true,
+                    verticalAlign: 'top',
+                    y: 25
+                },
+                mapNavigation: {
+                    enabled: true
+                },
+                colorAxis: {
+                    min: 1,
+                    type: 'logarithmic',
+                    minColor: '#EEEEFF',
+                    maxColor: '#000022',
+                    stops: [
+                        [0, '#EFEFFF'],
+                        [0.67, '#4444FF'],
+                        [1, '#000022']
+                    ]
+                },
+                credits: {
+                    enabled: true,
+                    text: 'Source: 2000 U.S. Census',
+                    href: 'javascript:window.open("https://www.census.gov/data/developers/data-sets/decennial-census.2000.html", "_blank")'
+                },
+                series: [{
+                    data: data,
+                    joinBy: ['postal-code', 'ST'],
+                    dataLabels: {
+                        enabled: true,
+                        color: '#FFFFFF',
+                        format: '{point.ST}'
+                    },
+                    name: '2000 U.S. Census',
+                    tooltip: {
+                        pointFormat: '{point.value}% of people in {point.StateName} self-identified as Asian alone'
+                    }
+                }]
+            });
+          }); // END OF MAKING 2000 MAP OF ASIAN POPULATION PERCENTAGES
+        }
+        function makeBOAAmap() {
+          // MAKE 2010 MAP OF BLACK OR AFRICAN AMERICAN ALONE POPULATION PERCENTAGES
+          $.getJSON('js/2010_boaa.json', function(data) {
+            Highcharts.mapChart('2010heatMapContainer', {
+                chart: {
+                    map: 'countries/us/us-all',
+                    borderWidth: 0.8
+                },
+                title: {
+                    margin: 35,
+                    text: '2010 Distribution of Black or African American Alone Population'
+                },
+                legend: {
+                    layout: 'horizontal',
+                    borderWidth: 0,
+                    backgroundColor: 'rgba(255,255,255,0.85)',
+                    floating: true,
+                    verticalAlign: 'top',
+                    y: 25
+                },
+                mapNavigation: {
+                    enabled: true
+                },
+                colorAxis: {
+                    min: 1,
+                    type: 'logarithmic',
+                    minColor: '#EEEEFF',
+                    maxColor: '#000022',
+                    stops: [
+                        [0, '#EFEFFF'],
+                        [0.67, '#4444FF'],
+                        [1, '#000022']
+                    ]
+                },
+                credits: {
+                    enabled: true,
+                    text: 'Source: 2010 U.S. Census',
+                    href: 'javascript:window.open("https://www.census.gov/data/developers/data-sets/decennial-census.2010.html", "_blank")'
+                },
+                series: [{
+                    data: data,
+                    joinBy: ['postal-code', 'ST'],
+                    dataLabels: {
+                        enabled: true,
+                        color: '#FFFFFF',
+                        format: '{point.ST}'
+                    },
+                    name: '2010 U.S. Census',
+                    tooltip: {
+                        pointFormat: '{point.value}% of people in {point.StateName} self-identified as Black or African American alone'
+                    }
+                }]
+            });
+          }); // END OF MAKING 2010 MAP OF BLACK OR AFRICAN AMERICAN ALONE POPULATION PERCENTAGES
 
-  // MAKE 2000 MAP OF BLACK OR AFRICAN AMERICAN ALONE POPULATION PERCENTAGES
-  $.getJSON('js/2000_boaa.json', function(data) {
-    Highcharts.mapChart('2000heatMapContainer', {
-        chart: {
-            map: 'countries/us/us-all',
-            borderWidth: 0.8
-        },
-        title: {
-            margin: 35,
-            text: '2000 Distribution of Black or African American Alone Population'
-        },
-        legend: {
-            layout: 'horizontal',
-            borderWidth: 0,
-            backgroundColor: 'rgba(255,255,255,0.85)',
-            floating: true,
-            verticalAlign: 'top',
-            y: 25
-        },
-        mapNavigation: {
-            enabled: true
-        },
-        colorAxis: {
-            min: 1,
-            type: 'logarithmic',
-            minColor: '#EEEEFF',
-            maxColor: '#000022',
-            stops: [
-                [0, '#EFEFFF'],
-                [0.67, '#4444FF'],
-                [1, '#000022']
-            ]
-        },
-        credits: {
-            enabled: true,
-            text: 'Source: 2000 U.S. Census',
-            href: 'javascript:window.open("https://www.census.gov/data/developers/data-sets/decennial-census.2000.html", "_blank")'
-        },
-        series: [{
-            data: data,
-            joinBy: ['postal-code', 'ST'],
-            dataLabels: {
-                enabled: true,
-                color: '#FFFFFF',
-                format: '{point.ST}'
-            },
-            name: '2000 U.S. Census',
-            tooltip: {
-                pointFormat: '{point.value}% of people in {point.StateName} self-identified as Black or African American alone'
-            }
-        }]
-    });
-  }); // END OF MAKING 2000 MAP OF BLACK OR AFRICAN AMERICAN ALONE POPULATION PERCENTAGES
-}
-function makeMultiRaceMap() {
-  // MAKE 2010 MAP OF MULTIRACIAL POPULATION PERCENTAGES
-  $.getJSON('js/2010_multiRace.json', function(data) {
-    Highcharts.mapChart('2010heatMapContainer', {
-        chart: {
-            map: 'countries/us/us-all',
-            borderWidth: 0.8
-        },
-        title: {
-            margin: 35,
-            text: '2010 Distribution of Multiracial Population'
-        },
-        legend: {
-            layout: 'horizontal',
-            borderWidth: 0,
-            backgroundColor: 'rgba(255,255,255,0.85)',
-            floating: true,
-            verticalAlign: 'top',
-            y: 25
-        },
-        mapNavigation: {
-            enabled: true
-        },
-        colorAxis: {
-            min: 1,
-            type: 'logarithmic',
-            minColor: '#EEEEFF',
-            maxColor: '#000022',
-            stops: [
-                [0, '#EFEFFF'],
-                [0.67, '#4444FF'],
-                [1, '#000022']
-            ]
-        },
-        credits: {
-            enabled: true,
-            text: 'Source: 2010 U.S. Census',
-            href: 'javascript:window.open("https://www.census.gov/data/developers/data-sets/decennial-census.2010.html", "_blank")'
-        },
-        series: [{
-            data: data,
-            joinBy: ['postal-code', 'ST'],
-            dataLabels: {
-                enabled: true,
-                color: '#FFFFFF',
-                format: '{point.ST}'
-            },
-            name: '2010 U.S. Census',
-            tooltip: {
-                pointFormat: '{point.value}% of people in {point.StateName} self-identified as two or more races'
-            }
-        }]
-    });
-  }); // END OF MAKING 2010 MAP OF MULTIRACIAL POPULATION PERCENTAGES
+          // MAKE 2000 MAP OF BLACK OR AFRICAN AMERICAN ALONE POPULATION PERCENTAGES
+          $.getJSON('js/2000_boaa.json', function(data) {
+            Highcharts.mapChart('2000heatMapContainer', {
+                chart: {
+                    map: 'countries/us/us-all',
+                    borderWidth: 0.8
+                },
+                title: {
+                    margin: 35,
+                    text: '2000 Distribution of Black or African American Alone Population'
+                },
+                legend: {
+                    layout: 'horizontal',
+                    borderWidth: 0,
+                    backgroundColor: 'rgba(255,255,255,0.85)',
+                    floating: true,
+                    verticalAlign: 'top',
+                    y: 25
+                },
+                mapNavigation: {
+                    enabled: true
+                },
+                colorAxis: {
+                    min: 1,
+                    type: 'logarithmic',
+                    minColor: '#EEEEFF',
+                    maxColor: '#000022',
+                    stops: [
+                        [0, '#EFEFFF'],
+                        [0.67, '#4444FF'],
+                        [1, '#000022']
+                    ]
+                },
+                credits: {
+                    enabled: true,
+                    text: 'Source: 2000 U.S. Census',
+                    href: 'javascript:window.open("https://www.census.gov/data/developers/data-sets/decennial-census.2000.html", "_blank")'
+                },
+                series: [{
+                    data: data,
+                    joinBy: ['postal-code', 'ST'],
+                    dataLabels: {
+                        enabled: true,
+                        color: '#FFFFFF',
+                        format: '{point.ST}'
+                    },
+                    name: '2000 U.S. Census',
+                    tooltip: {
+                        pointFormat: '{point.value}% of people in {point.StateName} self-identified as Black or African American alone'
+                    }
+                }]
+            });
+          }); // END OF MAKING 2000 MAP OF BLACK OR AFRICAN AMERICAN ALONE POPULATION PERCENTAGES
+        }
+        function makeMultiRaceMap() {
+          // MAKE 2010 MAP OF MULTIRACIAL POPULATION PERCENTAGES
+          $.getJSON('js/2010_multiRace.json', function(data) {
+            Highcharts.mapChart('2010heatMapContainer', {
+                chart: {
+                    map: 'countries/us/us-all',
+                    borderWidth: 0.8
+                },
+                title: {
+                    margin: 35,
+                    text: '2010 Distribution of Multiracial Population'
+                },
+                legend: {
+                    layout: 'horizontal',
+                    borderWidth: 0,
+                    backgroundColor: 'rgba(255,255,255,0.85)',
+                    floating: true,
+                    verticalAlign: 'top',
+                    y: 25
+                },
+                mapNavigation: {
+                    enabled: true
+                },
+                colorAxis: {
+                    min: 1,
+                    type: 'logarithmic',
+                    minColor: '#EEEEFF',
+                    maxColor: '#000022',
+                    stops: [
+                        [0, '#EFEFFF'],
+                        [0.67, '#4444FF'],
+                        [1, '#000022']
+                    ]
+                },
+                credits: {
+                    enabled: true,
+                    text: 'Source: 2010 U.S. Census',
+                    href: 'javascript:window.open("https://www.census.gov/data/developers/data-sets/decennial-census.2010.html", "_blank")'
+                },
+                series: [{
+                    data: data,
+                    joinBy: ['postal-code', 'ST'],
+                    dataLabels: {
+                        enabled: true,
+                        color: '#FFFFFF',
+                        format: '{point.ST}'
+                    },
+                    name: '2010 U.S. Census',
+                    tooltip: {
+                        pointFormat: '{point.value}% of people in {point.StateName} self-identified as two or more races'
+                    }
+                }]
+            });
+          }); // END OF MAKING 2010 MAP OF MULTIRACIAL POPULATION PERCENTAGES
 
-  // MAKE 2000 MAP OF MULTIRACIAL POPULATION PERCENTAGES
-  $.getJSON('js/2000_multiRace.json', function(data) {
-    Highcharts.mapChart('2000heatMapContainer', {
-        chart: {
-            map: 'countries/us/us-all',
-            borderWidth: 0.8
-        },
-        title: {
-            margin: 35,
-            text: '2000 Distribution of Multiracial Population'
-        },
-        legend: {
-            layout: 'horizontal',
-            borderWidth: 0,
-            backgroundColor: 'rgba(255,255,255,0.85)',
-            floating: true,
-            verticalAlign: 'top',
-            y: 25
-        },
-        mapNavigation: {
-            enabled: true
-        },
-        colorAxis: {
-            min: 1,
-            type: 'logarithmic',
-            minColor: '#EEEEFF',
-            maxColor: '#000022',
-            stops: [
-                [0, '#EFEFFF'],
-                [0.67, '#4444FF'],
-                [1, '#000022']
-            ]
-        },
-        credits: {
-            enabled: true,
-            text: 'Source: 2000 U.S. Census',
-            href: 'javascript:window.open("https://www.census.gov/data/developers/data-sets/decennial-census.2000.html", "_blank")'
-        },
-        series: [{
-            data: data,
-            joinBy: ['postal-code', 'ST'],
-            dataLabels: {
-                enabled: true,
-                color: '#FFFFFF',
-                format: '{point.ST}'
-            },
-            name: '2000 U.S. Census',
-            tooltip: {
-                pointFormat: '{point.value}% of people in {point.StateName} self-identified as two or more races'
-            }
-        }]
-    });
-  }); // END OF MAKING 2000 MAP OF MULTIRACIAL POPULATION PERCENTAGES
-}
-function makeNHPImap() {
-  // MAKE 2010 MAP OF NATIVE HAWAIIAN AND OTHER PACIFIC ISLANDER ALONE POPULATION PERCENTAGES
-  $.getJSON('js/2010_nhpi.json', function(data) {
-    Highcharts.mapChart('2010heatMapContainer', {
-        chart: {
-            map: 'countries/us/us-all',
-            borderWidth: 0.8
-        },
-        title: {
-            margin: 35,
-            text: '2010 Distribution of Native Hawaiian and Other Pacific Islander Alone Population'
-        },
-        legend: {
-            layout: 'horizontal',
-            borderWidth: 0,
-            backgroundColor: 'rgba(255,255,255,0.85)',
-            floating: true,
-            verticalAlign: 'top',
-            y: 25
-        },
-        mapNavigation: {
-            enabled: true
-        },
-        colorAxis: {
-            min: 1,
-            type: 'logarithmic',
-            minColor: '#EEEEFF',
-            maxColor: '#000022',
-            stops: [
-                [0, '#EFEFFF'],
-                [0.67, '#4444FF'],
-                [1, '#000022']
-            ]
-        },
-        credits: {
-            enabled: true,
-            text: 'Source: 2010 U.S. Census',
-            href: 'javascript:window.open("https://www.census.gov/data/developers/data-sets/decennial-census.2010.html", "_blank")'
-        },
-        series: [{
-            data: data,
-            joinBy: ['postal-code', 'ST'],
-            dataLabels: {
-                enabled: true,
-                color: '#FFFFFF',
-                format: '{point.ST}'
-            },
-            name: '2010 U.S. Census',
-            tooltip: {
-                pointFormat: '{point.value}% of people in {point.StateName} self-identified as Native Hawaiian and Other Pacific Islander alone'
-            }
-        }]
-    });
-  }); // END OF MAKING 2010 MAP OF NATIVE HAWAIIAN AND OTHER PACIFIC ISLANDER ALONE POPULATION PERCENTAGES
+          // MAKE 2000 MAP OF MULTIRACIAL POPULATION PERCENTAGES
+          $.getJSON('js/2000_multiRace.json', function(data) {
+            Highcharts.mapChart('2000heatMapContainer', {
+                chart: {
+                    map: 'countries/us/us-all',
+                    borderWidth: 0.8
+                },
+                title: {
+                    margin: 35,
+                    text: '2000 Distribution of Multiracial Population'
+                },
+                legend: {
+                    layout: 'horizontal',
+                    borderWidth: 0,
+                    backgroundColor: 'rgba(255,255,255,0.85)',
+                    floating: true,
+                    verticalAlign: 'top',
+                    y: 25
+                },
+                mapNavigation: {
+                    enabled: true
+                },
+                colorAxis: {
+                    min: 1,
+                    type: 'logarithmic',
+                    minColor: '#EEEEFF',
+                    maxColor: '#000022',
+                    stops: [
+                        [0, '#EFEFFF'],
+                        [0.67, '#4444FF'],
+                        [1, '#000022']
+                    ]
+                },
+                credits: {
+                    enabled: true,
+                    text: 'Source: 2000 U.S. Census',
+                    href: 'javascript:window.open("https://www.census.gov/data/developers/data-sets/decennial-census.2000.html", "_blank")'
+                },
+                series: [{
+                    data: data,
+                    joinBy: ['postal-code', 'ST'],
+                    dataLabels: {
+                        enabled: true,
+                        color: '#FFFFFF',
+                        format: '{point.ST}'
+                    },
+                    name: '2000 U.S. Census',
+                    tooltip: {
+                        pointFormat: '{point.value}% of people in {point.StateName} self-identified as two or more races'
+                    }
+                }]
+            });
+          }); // END OF MAKING 2000 MAP OF MULTIRACIAL POPULATION PERCENTAGES
+        }
+        function makeNHPImap() {
+          // MAKE 2010 MAP OF NATIVE HAWAIIAN AND OTHER PACIFIC ISLANDER ALONE POPULATION PERCENTAGES
+          $.getJSON('js/2010_nhpi.json', function(data) {
+            Highcharts.mapChart('2010heatMapContainer', {
+                chart: {
+                    map: 'countries/us/us-all',
+                    borderWidth: 0.8
+                },
+                title: {
+                    margin: 35,
+                    text: '2010 Distribution of Native Hawaiian and Other Pacific Islander Alone Population'
+                },
+                legend: {
+                    layout: 'horizontal',
+                    borderWidth: 0,
+                    backgroundColor: 'rgba(255,255,255,0.85)',
+                    floating: true,
+                    verticalAlign: 'top',
+                    y: 25
+                },
+                mapNavigation: {
+                    enabled: true
+                },
+                colorAxis: {
+                    min: 1,
+                    type: 'logarithmic',
+                    minColor: '#EEEEFF',
+                    maxColor: '#000022',
+                    stops: [
+                        [0, '#EFEFFF'],
+                        [0.67, '#4444FF'],
+                        [1, '#000022']
+                    ]
+                },
+                credits: {
+                    enabled: true,
+                    text: 'Source: 2010 U.S. Census',
+                    href: 'javascript:window.open("https://www.census.gov/data/developers/data-sets/decennial-census.2010.html", "_blank")'
+                },
+                series: [{
+                    data: data,
+                    joinBy: ['postal-code', 'ST'],
+                    dataLabels: {
+                        enabled: true,
+                        color: '#FFFFFF',
+                        format: '{point.ST}'
+                    },
+                    name: '2010 U.S. Census',
+                    tooltip: {
+                        pointFormat: '{point.value}% of people in {point.StateName} self-identified as Native Hawaiian and Other Pacific Islander alone'
+                    }
+                }]
+            });
+          }); // END OF MAKING 2010 MAP OF NATIVE HAWAIIAN AND OTHER PACIFIC ISLANDER ALONE POPULATION PERCENTAGES
 
-  // MAKE 2000 MAP OF NATIVE HAWAIIAN AND OTHER PACIFIC ISLANDER ALONE POPULATION PERCENTAGES
-  $.getJSON('js/2000_nhpi.json', function(data) {
-    Highcharts.mapChart('2000heatMapContainer', {
-        chart: {
-            map: 'countries/us/us-all',
-            borderWidth: 0.8
-        },
-        title: {
-            margin: 35,
-            text: '2000 Distribution of Native Hawaiian and Other Pacific Islander Alone Population'
-        },
-        legend: {
-            layout: 'horizontal',
-            borderWidth: 0,
-            backgroundColor: 'rgba(255,255,255,0.85)',
-            floating: true,
-            verticalAlign: 'top',
-            y: 25
-        },
-        mapNavigation: {
-            enabled: true
-        },
-        colorAxis: {
-            min: 1,
-            type: 'logarithmic',
-            minColor: '#EEEEFF',
-            maxColor: '#000022',
-            stops: [
-                [0, '#EFEFFF'],
-                [0.67, '#4444FF'],
-                [1, '#000022']
-            ]
-        },
-        credits: {
-            enabled: true,
-            text: 'Source: 2000 U.S. Census',
-            href: 'javascript:window.open("https://www.census.gov/data/developers/data-sets/decennial-census.2000.html", "_blank")'
-        },
-        series: [{
-            data: data,
-            joinBy: ['postal-code', 'ST'],
-            dataLabels: {
-                enabled: true,
-                color: '#FFFFFF',
-                format: '{point.ST}'
-            },
-            name: '2000 U.S. Census',
-            tooltip: {
-                pointFormat: '{point.value}% of people in {point.StateName} self-identified as Native Hawaiian and Other Pacific Islander alone'
-            }
-        }]
-    });
-  }); // END OF MAKING 2000 MAP OF NATIVE HAWAIIAN AND OTHER PACIFIC ISLANDER ALONE POPULATION PERCENTAGES
-}
-function makeOtherRaceMap() {
-  // MAKE 2010 MAP OF SOME OTHER RACE ALONE POPULATION PERCENTAGES
-  $.getJSON('js/2010_otherRace.json', function(data) {
-    Highcharts.mapChart('2010heatMapContainer', {
-        chart: {
-            map: 'countries/us/us-all',
-            borderWidth: 0.8
-        },
-        title: {
-            margin: 35,
-            text: '2010 Distribution of Some Other Race Alone Population'
-        },
-        legend: {
-            layout: 'horizontal',
-            borderWidth: 0,
-            backgroundColor: 'rgba(255,255,255,0.85)',
-            floating: true,
-            verticalAlign: 'top',
-            y: 25
-        },
-        mapNavigation: {
-            enabled: true
-        },
-        colorAxis: {
-            min: 1,
-            type: 'logarithmic',
-            minColor: '#EEEEFF',
-            maxColor: '#000022',
-            stops: [
-                [0, '#EFEFFF'],
-                [0.67, '#4444FF'],
-                [1, '#000022']
-            ]
-        },
-        credits: {
-            enabled: true,
-            text: 'Source: 2010 U.S. Census',
-            href: 'javascript:window.open("https://www.census.gov/data/developers/data-sets/decennial-census.2010.html", "_blank")'
-        },
-        series: [{
-            data: data,
-            joinBy: ['postal-code', 'ST'],
-            dataLabels: {
-                enabled: true,
-                color: '#FFFFFF',
-                format: '{point.ST}'
-            },
-            name: '2010 U.S. Census',
-            tooltip: {
-                pointFormat: '{point.value}% of people in {point.StateName} self-identified as some other race alone'
-            }
-        }]
-    });
-  }); // END OF MAKING 2010 MAP OF SOME OTHER RACE ALONE POPULATION PERCENTAGES
+          // MAKE 2000 MAP OF NATIVE HAWAIIAN AND OTHER PACIFIC ISLANDER ALONE POPULATION PERCENTAGES
+          $.getJSON('js/2000_nhpi.json', function(data) {
+            Highcharts.mapChart('2000heatMapContainer', {
+                chart: {
+                    map: 'countries/us/us-all',
+                    borderWidth: 0.8
+                },
+                title: {
+                    margin: 35,
+                    text: '2000 Distribution of Native Hawaiian and Other Pacific Islander Alone Population'
+                },
+                legend: {
+                    layout: 'horizontal',
+                    borderWidth: 0,
+                    backgroundColor: 'rgba(255,255,255,0.85)',
+                    floating: true,
+                    verticalAlign: 'top',
+                    y: 25
+                },
+                mapNavigation: {
+                    enabled: true
+                },
+                colorAxis: {
+                    min: 1,
+                    type: 'logarithmic',
+                    minColor: '#EEEEFF',
+                    maxColor: '#000022',
+                    stops: [
+                        [0, '#EFEFFF'],
+                        [0.67, '#4444FF'],
+                        [1, '#000022']
+                    ]
+                },
+                credits: {
+                    enabled: true,
+                    text: 'Source: 2000 U.S. Census',
+                    href: 'javascript:window.open("https://www.census.gov/data/developers/data-sets/decennial-census.2000.html", "_blank")'
+                },
+                series: [{
+                    data: data,
+                    joinBy: ['postal-code', 'ST'],
+                    dataLabels: {
+                        enabled: true,
+                        color: '#FFFFFF',
+                        format: '{point.ST}'
+                    },
+                    name: '2000 U.S. Census',
+                    tooltip: {
+                        pointFormat: '{point.value}% of people in {point.StateName} self-identified as Native Hawaiian and Other Pacific Islander alone'
+                    }
+                }]
+            });
+          }); // END OF MAKING 2000 MAP OF NATIVE HAWAIIAN AND OTHER PACIFIC ISLANDER ALONE POPULATION PERCENTAGES
+        }
+        function makeOtherRaceMap() {
+          // MAKE 2010 MAP OF SOME OTHER RACE ALONE POPULATION PERCENTAGES
+          $.getJSON('js/2010_otherRace.json', function(data) {
+            Highcharts.mapChart('2010heatMapContainer', {
+                chart: {
+                    map: 'countries/us/us-all',
+                    borderWidth: 0.8
+                },
+                title: {
+                    margin: 35,
+                    text: '2010 Distribution of Some Other Race Alone Population'
+                },
+                legend: {
+                    layout: 'horizontal',
+                    borderWidth: 0,
+                    backgroundColor: 'rgba(255,255,255,0.85)',
+                    floating: true,
+                    verticalAlign: 'top',
+                    y: 25
+                },
+                mapNavigation: {
+                    enabled: true
+                },
+                colorAxis: {
+                    min: 1,
+                    type: 'logarithmic',
+                    minColor: '#EEEEFF',
+                    maxColor: '#000022',
+                    stops: [
+                        [0, '#EFEFFF'],
+                        [0.67, '#4444FF'],
+                        [1, '#000022']
+                    ]
+                },
+                credits: {
+                    enabled: true,
+                    text: 'Source: 2010 U.S. Census',
+                    href: 'javascript:window.open("https://www.census.gov/data/developers/data-sets/decennial-census.2010.html", "_blank")'
+                },
+                series: [{
+                    data: data,
+                    joinBy: ['postal-code', 'ST'],
+                    dataLabels: {
+                        enabled: true,
+                        color: '#FFFFFF',
+                        format: '{point.ST}'
+                    },
+                    name: '2010 U.S. Census',
+                    tooltip: {
+                        pointFormat: '{point.value}% of people in {point.StateName} self-identified as some other race alone'
+                    }
+                }]
+            });
+          }); // END OF MAKING 2010 MAP OF SOME OTHER RACE ALONE POPULATION PERCENTAGES
 
-  // MAKE 2000 MAP OF SOME OTHER RACE ALONE POPULATION PERCENTAGES
-  $.getJSON('js/2000_otherRace.json', function(data) {
-    Highcharts.mapChart('2000heatMapContainer', {
-        chart: {
-            map: 'countries/us/us-all',
-            borderWidth: 0.8
-        },
-        title: {
-            margin: 35,
-            text: '2000 Distribution of Some Other Race Alone Population'
-        },
-        legend: {
-            layout: 'horizontal',
-            borderWidth: 0,
-            backgroundColor: 'rgba(255,255,255,0.85)',
-            floating: true,
-            verticalAlign: 'top',
-            y: 25
-        },
-        mapNavigation: {
-            enabled: true
-        },
-        colorAxis: {
-            min: 1,
-            type: 'logarithmic',
-            minColor: '#EEEEFF',
-            maxColor: '#000022',
-            stops: [
-                [0, '#EFEFFF'],
-                [0.67, '#4444FF'],
-                [1, '#000022']
-            ]
-        },
-        credits: {
-            enabled: true,
-            text: 'Source: 2000 U.S. Census',
-            href: 'javascript:window.open("https://www.census.gov/data/developers/data-sets/decennial-census.2000.html", "_blank")'
-        },
-        series: [{
-            data: data,
-            joinBy: ['postal-code', 'ST'],
-            dataLabels: {
-                enabled: true,
-                color: '#FFFFFF',
-                format: '{point.ST}'
-            },
-            name: '2000 U.S. Census',
-            tooltip: {
-                pointFormat: '{point.value}% of people in {point.StateName} self-identified as some other race alone'
-            }
-        }]
-    });
-  }); // END OF MAKING 2000 MAP OF SOME OTHER RACE ALONE POPULATION PERCENTAGES
-}
-function makeWhiteMap() {
-  // MAKE 2010 MAP OF WHITE ALONE POPULATION PERCENTAGES
-  $.getJSON('js/2010_white.json', function(data) {
-    Highcharts.mapChart('2010heatMapContainer', {
-        chart: {
-            map: 'countries/us/us-all',
-            borderWidth: 0.8
-        },
-        title: {
-            margin: 35,
-            text: '2010 Distribution of White Alone Population'
-        },
-        legend: {
-            layout: 'horizontal',
-            borderWidth: 0,
-            backgroundColor: 'rgba(255,255,255,0.85)',
-            floating: true,
-            verticalAlign: 'top',
-            y: 25
-        },
-        mapNavigation: {
-            enabled: true
-        },
-        colorAxis: {
-            min: 1,
-            type: 'logarithmic',
-            minColor: '#EEEEFF',
-            maxColor: '#000022',
-            stops: [
-                [0, '#EFEFFF'],
-                [0.67, '#4444FF'],
-                [1, '#000022']
-            ]
-        },
-        credits: {
-            enabled: true,
-            text: 'Source: 2010 U.S. Census',
-            href: 'javascript:window.open("https://www.census.gov/data/developers/data-sets/decennial-census.2010.html", "_blank")'
-        },
-        series: [{
-            data: data,
-            joinBy: ['postal-code', 'ST'],
-            dataLabels: {
-                enabled: true,
-                color: '#FFFFFF',
-                format: '{point.ST}'
-            },
-            name: '2010 U.S. Census',
-            tooltip: {
-                pointFormat: '{point.value}% of people in {point.StateName} self-identified as white alone'
-            }
-        }]
-    });
-  }); // END OF MAKING 2010 MAP OF WHITE POPULATION PERCENTAGES
+          // MAKE 2000 MAP OF SOME OTHER RACE ALONE POPULATION PERCENTAGES
+          $.getJSON('js/2000_otherRace.json', function(data) {
+            Highcharts.mapChart('2000heatMapContainer', {
+                chart: {
+                    map: 'countries/us/us-all',
+                    borderWidth: 0.8
+                },
+                title: {
+                    margin: 35,
+                    text: '2000 Distribution of Some Other Race Alone Population'
+                },
+                legend: {
+                    layout: 'horizontal',
+                    borderWidth: 0,
+                    backgroundColor: 'rgba(255,255,255,0.85)',
+                    floating: true,
+                    verticalAlign: 'top',
+                    y: 25
+                },
+                mapNavigation: {
+                    enabled: true
+                },
+                colorAxis: {
+                    min: 1,
+                    type: 'logarithmic',
+                    minColor: '#EEEEFF',
+                    maxColor: '#000022',
+                    stops: [
+                        [0, '#EFEFFF'],
+                        [0.67, '#4444FF'],
+                        [1, '#000022']
+                    ]
+                },
+                credits: {
+                    enabled: true,
+                    text: 'Source: 2000 U.S. Census',
+                    href: 'javascript:window.open("https://www.census.gov/data/developers/data-sets/decennial-census.2000.html", "_blank")'
+                },
+                series: [{
+                    data: data,
+                    joinBy: ['postal-code', 'ST'],
+                    dataLabels: {
+                        enabled: true,
+                        color: '#FFFFFF',
+                        format: '{point.ST}'
+                    },
+                    name: '2000 U.S. Census',
+                    tooltip: {
+                        pointFormat: '{point.value}% of people in {point.StateName} self-identified as some other race alone'
+                    }
+                }]
+            });
+          }); // END OF MAKING 2000 MAP OF SOME OTHER RACE ALONE POPULATION PERCENTAGES
+        }
+        function makeWhiteMap() {
+          // MAKE 2010 MAP OF WHITE ALONE POPULATION PERCENTAGES
+          $.getJSON('js/2010_white.json', function(data) {
+            Highcharts.mapChart('2010heatMapContainer', {
+                chart: {
+                    map: 'countries/us/us-all',
+                    borderWidth: 0.8
+                },
+                title: {
+                    margin: 35,
+                    text: '2010 Distribution of White Alone Population'
+                },
+                legend: {
+                    layout: 'horizontal',
+                    borderWidth: 0,
+                    backgroundColor: 'rgba(255,255,255,0.85)',
+                    floating: true,
+                    verticalAlign: 'top',
+                    y: 25
+                },
+                mapNavigation: {
+                    enabled: true
+                },
+                colorAxis: {
+                    min: 1,
+                    type: 'logarithmic',
+                    minColor: '#EEEEFF',
+                    maxColor: '#000022',
+                    stops: [
+                        [0, '#EFEFFF'],
+                        [0.67, '#4444FF'],
+                        [1, '#000022']
+                    ]
+                },
+                credits: {
+                    enabled: true,
+                    text: 'Source: 2010 U.S. Census',
+                    href: 'javascript:window.open("https://www.census.gov/data/developers/data-sets/decennial-census.2010.html", "_blank")'
+                },
+                series: [{
+                    data: data,
+                    joinBy: ['postal-code', 'ST'],
+                    dataLabels: {
+                        enabled: true,
+                        color: '#FFFFFF',
+                        format: '{point.ST}'
+                    },
+                    name: '2010 U.S. Census',
+                    tooltip: {
+                        pointFormat: '{point.value}% of people in {point.StateName} self-identified as white alone'
+                    }
+                }]
+            });
+          }); // END OF MAKING 2010 MAP OF WHITE POPULATION PERCENTAGES
 
-  // MAKE 2000 MAP OF WHITE ALONE POPULATION PERCENTAGES
-  $.getJSON('js/2000_white.json', function(data) {
-    Highcharts.mapChart('2000heatMapContainer', {
-        chart: {
-            map: 'countries/us/us-all',
-            borderWidth: 0.8
-        },
-        title: {
-            margin: 35,
-            text: '2000 Distribution of White Alone Population'
-        },
-        legend: {
-            layout: 'horizontal',
-            borderWidth: 0,
-            backgroundColor: 'rgba(255,255,255,0.85)',
-            floating: true,
-            verticalAlign: 'top',
-            y: 25
-        },
-        mapNavigation: {
-            enabled: true
-        },
-        colorAxis: {
-            min: 1,
-            type: 'logarithmic',
-            minColor: '#EEEEFF',
-            maxColor: '#000022',
-            stops: [
-                [0, '#EFEFFF'],
-                [0.67, '#4444FF'],
-                [1, '#000022']
-            ]
-        },
-        credits: {
-            enabled: true,
-            text: 'Source: 2000 U.S. Census',
-            href: 'javascript:window.open("https://www.census.gov/data/developers/data-sets/decennial-census.2000.html", "_blank")'
-        },
-        series: [{
-            data: data,
-            joinBy: ['postal-code', 'ST'],
-            dataLabels: {
-                enabled: true,
-                color: '#FFFFFF',
-                format: '{point.ST}'
-            },
-            name: '2000 U.S. Census',
-            tooltip: {
-                pointFormat: '{point.value}% of people in {point.StateName} self-identified as white alone'
-            }
-        }]
-    });
-  }); // END OF MAKING 2000 MAP OF WHITE POPULATION PERCENTAGES
-}
+          // MAKE 2000 MAP OF WHITE ALONE POPULATION PERCENTAGES
+          $.getJSON('js/2000_white.json', function(data) {
+            Highcharts.mapChart('2000heatMapContainer', {
+                chart: {
+                    map: 'countries/us/us-all',
+                    borderWidth: 0.8
+                },
+                title: {
+                    margin: 35,
+                    text: '2000 Distribution of White Alone Population'
+                },
+                legend: {
+                    layout: 'horizontal',
+                    borderWidth: 0,
+                    backgroundColor: 'rgba(255,255,255,0.85)',
+                    floating: true,
+                    verticalAlign: 'top',
+                    y: 25
+                },
+                mapNavigation: {
+                    enabled: true
+                },
+                colorAxis: {
+                    min: 1,
+                    type: 'logarithmic',
+                    minColor: '#EEEEFF',
+                    maxColor: '#000022',
+                    stops: [
+                        [0, '#EFEFFF'],
+                        [0.67, '#4444FF'],
+                        [1, '#000022']
+                    ]
+                },
+                credits: {
+                    enabled: true,
+                    text: 'Source: 2000 U.S. Census',
+                    href: 'javascript:window.open("https://www.census.gov/data/developers/data-sets/decennial-census.2000.html", "_blank")'
+                },
+                series: [{
+                    data: data,
+                    joinBy: ['postal-code', 'ST'],
+                    dataLabels: {
+                        enabled: true,
+                        color: '#FFFFFF',
+                        format: '{point.ST}'
+                    },
+                    name: '2000 U.S. Census',
+                    tooltip: {
+                        pointFormat: '{point.value}% of people in {point.StateName} self-identified as white alone'
+                    }
+                }]
+            });
+          }); // END OF MAKING 2000 MAP OF WHITE POPULATION PERCENTAGES
+        }
+// END RACIAL HEAT MAP FUNCTIONS
