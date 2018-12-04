@@ -16,8 +16,10 @@
     <div>79% speak only English at home</div>
     <div>21% speak a language other than English at home</div>
 
-    <h3>Languages Spoken at Home (Other Than English) by Number of Speakers</h3>
-    <div id="temp"></div>
+    <canvas id="language-barchart"></canvas>
+    <br>
+    <div>* Includes Cantonese, Mandarin, and other Chinese languages</div>
+    <div>** Includes Patois and Cajun</div>
 
     <br>
     <div>(Source: <a href="https://www.census.gov/data/developers/data-sets/language-stats.html" target="_blank">American Community Survey (ACS) 2009-2013</a>)</div>
@@ -70,7 +72,7 @@
   <script src="https://code.highcharts.com/maps/modules/offline-exporting.js"></script>
   <script src="https://code.highcharts.com/mapdata/countries/us/us-all.js"></script>
 <!--End Highmaps-->
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.js"></script> <!--Chart.js-->
   <script src="js/scripts.js"></script>
 </body>
 </html>
