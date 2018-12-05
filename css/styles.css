@@ -2,14 +2,20 @@ body {
   margin: 2.5% 10% 2.5% 10%;
 }
 
-#change, #heatMapsContainer, #languagesContainer, #future {
+#heatMapsContainer, #languagesContainer, #future {
   border: 1px solid black;
   padding: 2.5% 5% 2.5% 5%;
   margin: 2.5% 0% 2.5% 0%;
 }
 
 img {
-  width: 60%;
+  width: 20%;
   height: auto;
   margin: 2% 0% 2% 0%;
+}
+
+#comparisonContainer {
+  min-width: 310px;
+  height: 80vh;
+  margin: 0 auto;
 }

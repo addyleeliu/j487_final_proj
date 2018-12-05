@@ -424,8 +424,59 @@ $(function(){
             console.log('AJAX request from 2013 Language Statistics API for ACS data (languages in additional language list) completed!')
           }
         }); // CLOSE CALL TO 2013 ACS API FOR ALL THE LANGUAGES IN ADDITIONAL LANGUAGE LIST
-
   // END 2013 AMERICAN COMMUNITY SURVEY API
+
+  // START MAKING A CHART COMPARING 2010 TO 2000 RACIAL PERCENTAGES
+        Highcharts.chart('comparisonContainer', {
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: '2000 versus 2010 U.S. Population Distributions by Race'
+            },
+            xAxis: {
+                categories: [
+                    'American Indian and Alaska Native Alone',
+                    'Asian Alone',
+                    'Black or African American Alone',
+                    'Multiracial',
+                    'Native Hawaiian and Other Pacific Islander Alone',
+                    'Some Other Race Alone',
+                    'White Alone'
+                ],
+                crosshair: true
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Percent of National Population (%)'
+                }
+            },
+            tooltip: {
+                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                    '<td style="padding:0"><b>{point.y:.2f}%</b></td></tr>',
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true
+            },
+            plotOptions: {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
+                }
+            },
+            series: [{
+                name: '2000',
+                data: [0.88, 3.64, 12.32, 2.43, 0.14, 5.46, 75.14]
+
+            }, {
+                name: '2010',
+                data: [0.95, 4.75, 12.61, 2.92, 0.17, 6.19, 72.41]
+
+            }]
+        });
+  // END MAKING A CHART COMPARING 2010 TO 2000 RACIAL PERCENTAGES
 
 }); // END OF DOCUMENT READY
 
