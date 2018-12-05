@@ -468,10 +468,12 @@ $(function(){
             },
             series: [{
                 name: '2000',
+                color: '#D88153',
                 data: [0.88, 3.64, 12.32, 2.43, 0.14, 5.46, 75.14]
 
             }, {
                 name: '2010',
+                color: '#262B5A',
                 data: [0.95, 4.75, 12.61, 2.92, 0.17, 6.19, 72.41]
 
             }]
@@ -1347,8 +1349,8 @@ $(function(){
                   html += '<img class="thumbnail" src="' + article.urlToImage + '">';
                   html += '<div class="text">';
                     html += '<a href="' + article.url + '" target="_blank">';
-                    html += '<h2 class="headline">' + article.title + '</h2>';
-                    html += '<h4 class="byline">By ' + article.author + ' at <em>' + article.source.name + '</em></h4></a>';
+                    html += '<h4 class="headline">' + article.title + '</h4>';
+                    html += '<div class="byline">By ' + article.author + ' at <em>' + article.source.name + '</em></div></a>';
                   html += '</div>';
                 html += '</div>';
               });

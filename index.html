@@ -3,135 +3,133 @@
 <head>
   <title>Final Project</title>
   <link rel="stylesheet" href="css/styles.css" type="text/css"/>
-  <!--Start Responsive Horizontal Bar Chart jQuery Plugin Styling-->
-    <link rel="stylesheet" href="build/css/horizBarChart.css" type="text/css"/>
-    <link rel="stylesheet" href="build/css/style.css" type="text/css"/>
-  <!--End Responsive Horizontal Bar Chart jQuery Plugin Styling-->
+<!--Start Responsive Horizontal Bar Chart jQuery Plugin Styling-->
+  <link rel="stylesheet" href="build/css/horizBarChart.css" type="text/css"/>
+<!--End Responsive Horizontal Bar Chart jQuery Plugin Styling-->
   <link rel="icon"
     type="image/png"
     href="img/favicon.png"/>
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:300|Roboto+Slab:400,700" rel="stylesheet">
 </head>
 <body>
 
-  <h1>A Portrait of the American 'Melting Pot'</h1>
-  <a href="https://upload.wikimedia.org/wikipedia/commons/8/82/TheMeltingpot1.jpg" target="_blank">
-    <img src="img/melting-pot.jpg" alt="Playbill for the 1908 play The Melting Pot, which popularized the metaphor of the U.S. as a melting pot.">
-  </a>
+  <div id="main-container">
+    <h1>A Portrait of the American 'Melting Pot'</h1>
+    <a href="https://upload.wikimedia.org/wikipedia/commons/8/82/TheMeltingpot1.jpg" target="_blank">
+      <img src="img/melting-pot.jpg" alt="Playbill for the 1908 play The Melting Pot, which popularized the metaphor of the U.S. as a melting pot." id="meltingpot">
+    </a>
 
-  <div>
-    <div>Nunc ultrices egestas arcu. Aenean molestie rutrum libero, quis suscipit enim iaculis id. Aenean condimentum leo mauris, vel interdum est fermentum vitae. Vestibulum porttitor id libero sagittis tincidunt. Praesent sit amet magna nunc. Praesent vitae bibendum libero. Phasellus volutpat ultricies arcu, in lobortis libero ornare vel. Phasellus scelerisque massa sed posuere commodo. Phasellus condimentum ex eget varius sollicitudin. Suspendisse potenti. Nullam ut eleifend tellus, sed accumsan arcu. Cras faucibus, elit vitae mattis porttitor, dui erat laoreet justo, sit amet dictum risus justo et nibh. Donec id leo tempor, gravida nisi quis, convallis ex. Mauris volutpat metus congue nulla dapibus ullamcorper. Etiam efficitur, odio eget feugiat scelerisque, ipsum tortor fermentum nulla, non pulvinar ligula nisi at lacus. Nunc egestas magna lorem, ac aliquet enim viverra sed.</div>
-    <br>
-    <div>Donec molestie massa eget purus vehicula dapibus. Ut nibh ipsum, molestie non tortor quis, bibendum tempus sem. Fusce vehicula fermentum turpis. Praesent neque neque, varius ac cursus at, venenatis non lacus. Sed magna ex, ornare nec arcu ac, suscipit ultrices est. In iaculis condimentum nisi. Praesent et congue odio. Nulla varius porta convallis. Duis condimentum erat rutrum semper varius. Suspendisse rhoncus cursus eros, in interdum nisl imperdiet nec. Vestibulum luctus scelerisque lorem sed placerat. Aenean ac accumsan metus, vel dictum justo. Donec ac turpis neque. Donec imperdiet ac odio et tempus.</div>
-  </div>
-
-  <div id="languagesContainer">
-    <h2>Language Statistics for Americans Age Five and Above (2013)</h2>
-    <div>While the United States has no official language at the federal level, English is its de facto national language. Besides English, many other languages are spoken, with at least 380 languages or language groups in use by members of the U.S. population.</div>
-    <span>79% speak only English at home        ;</span>
-    <span>21% speak a language other than English at home</span>
-    <br>
-    <span>#1 Most Commonly Used Language: 231,122,908 Speak only English at home        ;</span>
-    <span>#2 Most Commonly Used Language:37,458,470 Speak Spanish at home</span>
-    <br><br>
-    <!--Start of horizontal bar chart-->
-    <div class="chart-horiz clearfix">
-      <!-- Actual bar chart -->
-      <ul class="chart">
-        <li class="title" title="Top Languages Spoken at Home by Number of Speakers (Excluding 1. English and 2. Spanish) - 2013"></li>
-
-        <li class="current" title="3. Chinese*"><span class="bar" data-number="2896766"></span><span class="number">2,896,766</span></li>
-        <li class="current" title="4. Tagalog"><span class="bar" data-number="1613346"></span><span class="number">1,613,346</span></li>
-        <li class="current" title="5. Vietnamese"><span class="bar" data-number="1399936"></span><span class="number">1,399,936</span></li>
-        <li class="current" title="6. French**"><span class="bar" data-number="1307742"></span><span class="number">1,307,742</span></li>
-        <li class="current" title="7. Korean"><span class="bar" data-number="1117343"></span><span class="number">1,117,343</span></li>
-        <li class="current" title="8. German"><span class="bar" data-number="1063275"></span><span class="number">1,063,275</span></li>
-        <li class="current" title="9. Arabic"><span class="bar" data-number="924374"></span><span class="number">924,374</span></li>
-        <li class="current" title="10. Russian"><span class="bar" data-number="879434"></span><span class="number">879,434</span></li>
-        <li class="current" title="11. Italian"><span class="bar" data-number="708966"></span><span class="number">708,966</span></li>
-        <li class="current" title="12. Portuguese"><span class="bar" data-number="692500"></span><span class="number">692,500</span></li>
-        <li class="current" title="13. Hindi"><span class="bar" data-number="643337"></span><span class="number">643,337</span></li>
-        <li class="current" title="14. Polish"><span class="bar" data-number="580153"></span><span class="number">580,153</span></li>
-        <li class="current" title="15. Japanese"><span class="bar" data-number="449475"></span><span class="number">449,475</span></li>
-        <li class="current" title="16. Urdu"><span class="bar" data-number="397502"></span><span class="number">397,502</span></li>
-        <li class="current" title="17. Persian"><span class="bar" data-number="391113"></span><span class="number">391,113</span></li>
-        <li class="current" title="18. Gujarati"><span class="bar" data-number="373253"></span><span class="number">373,253</span></li>
-        <li class="current" title="19. Greek"><span class="bar" data-number="304932"></span><span class="number">304,932</span></li>
-        <li class="current" title="20. Bengali"><span class="bar" data-number="257740"></span><span class="number">257,740</span></li>
-        <li class="current" title="21. Panjabi"><span class="bar" data-number="253740"></span><span class="number">253,740</span></li>
-        <li class="current" title="22. Telugu"><span class="bar" data-number="247760"></span><span class="number">247,760</span></li>
-        <li class="current" title="23. Armenian"><span class="bar" data-number="237840"></span><span class="number">237,840</span></li>
-        <li class="current" title="24. Hmong"><span class="bar" data-number="214943"></span><span class="number">214,943</span></li>
-        <li class="current" title="25. Hebrew"><span class="bar" data-number="212747"></span><span class="number">212,747</span></li>
-      </ul>
+    <div>
+      <div>The United States has historically held the reputation of being a land of opportunity; as such, immigrants have long flocked to the nation in hopes of establishing new and better lives.</div>
+      <div>Despite recent political turmoil and U.S. leadership that have at times altered both the perception and process of immigrating to America, the U.S. remains "a nation of immigrants."</div>
+      <div>Data from the U.S. Decennial Census and the American Community Survey show the past and present of America's cultural landscape, as well as how that terrain is now changing.</div>
     </div>
-    <!--End of horizontal bar chart-->
-    <div>* Includes Cantonese, Mandarin, and other Chinese languages</div>
-    <div>** Includes Patois and Cajun</div>
-    <br>
-    <div>(Source: <a href="https://www.census.gov/data/developers/data-sets/language-stats.html" target="_blank">American Community Survey (ACS) 2009-2013</a>)</div>
-  </div>
 
-  <div id="heatMapsContainer">
-    <h2>Population Distributions by Race</h2>
+    <div>
+      <h2>Language Statistics for Americans Age Five and Above (2013)</h2>
+      <div>While the United States has no official language at the federal level, English is its de facto national language. Besides English, many other languages are spoken, with at least 380 languages or language groups in use by members of the U.S. population.</div>
+      <h3>Statistics</h3>
+      <ul>
+        <li>79% speak only English at home</li>
+        <li>21% speak a language other than English at home</li>
+        <li>#1 Most Commonly Used Language: 231,122,908 Speak only English at home</li>
+        <li>#2 Most Commonly Used Language:37,458,470 Speak Spanish at home</li>
+      </ul>
 
-    <select id="selectRace" onchange="changeRaceContent()">
-      <option value="aian">American Indian and Alaska Native Alone
-      <option value="asian">Asian Alone
-      <option value="boaa">Black or African American Alone
-      <option value="multiRace">Multiracial
-      <option value="nhpi">Native Hawaiian and Other Pacific Islander Alone
-      <option value="otherRace">Some Other Race Alone
-      <option value="white">White Alone
-    </select>
+      <!--Start of horizontal bar chart-->
+      <div class="chart-horiz clearfix">
+        <!-- Actual bar chart -->
+        <ul class="chart">
+          <li class="title" title="Top Languages Spoken at Home by Number of Speakers (Excluding 1. English and 2. Spanish) - 2013"></li>
 
-    <br><br>
+          <li class="current" title="3. Chinese*"><span class="bar" data-number="2896766"></span><span class="number">2,896,766</span></li>
+          <li class="current" title="4. Tagalog"><span class="bar" data-number="1613346"></span><span class="number">1,613,346</span></li>
+          <li class="current" title="5. Vietnamese"><span class="bar" data-number="1399936"></span><span class="number">1,399,936</span></li>
+          <li class="current" title="6. French**"><span class="bar" data-number="1307742"></span><span class="number">1,307,742</span></li>
+          <li class="current" title="7. Korean"><span class="bar" data-number="1117343"></span><span class="number">1,117,343</span></li>
+          <li class="current" title="8. German"><span class="bar" data-number="1063275"></span><span class="number">1,063,275</span></li>
+          <li class="current" title="9. Arabic"><span class="bar" data-number="924374"></span><span class="number">924,374</span></li>
+          <li class="current" title="10. Russian"><span class="bar" data-number="879434"></span><span class="number">879,434</span></li>
+          <li class="current" title="11. Italian"><span class="bar" data-number="708966"></span><span class="number">708,966</span></li>
+          <li class="current" title="12. Portuguese"><span class="bar" data-number="692500"></span><span class="number">692,500</span></li>
+          <li class="current" title="13. Hindi"><span class="bar" data-number="643337"></span><span class="number">643,337</span></li>
+          <li class="current" title="14. Polish"><span class="bar" data-number="580153"></span><span class="number">580,153</span></li>
+          <li class="current" title="15. Japanese"><span class="bar" data-number="449475"></span><span class="number">449,475</span></li>
+          <li class="current" title="16. Urdu"><span class="bar" data-number="397502"></span><span class="number">397,502</span></li>
+          <li class="current" title="17. Persian"><span class="bar" data-number="391113"></span><span class="number">391,113</span></li>
+          <li class="current" title="18. Gujarati"><span class="bar" data-number="373253"></span><span class="number">373,253</span></li>
+          <li class="current" title="19. Greek"><span class="bar" data-number="304932"></span><span class="number">304,932</span></li>
+          <li class="current" title="20. Bengali"><span class="bar" data-number="257740"></span><span class="number">257,740</span></li>
+        </ul>
+      </div>
+      <!--End of horizontal bar chart-->
+      <div class="small">* Includes Cantonese, Mandarin, and other Chinese languages</div>
+      <div class="small">** Includes Patois and Cajun</div>
 
-    <div id="2010heatMapContainer"></div>
+      <div>(Source: <a href="https://www.census.gov/data/developers/data-sets/language-stats.html" target="_blank">American Community Survey (ACS) 2009-2013</a>)</div>
+    </div>
 
-    <br>
-    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris efficitur semper est nec molestie. Praesent ac lacus consectetur, molestie massa et, tincidunt felis. Ut nunc leo, sollicitudin et velit eget, pulvinar tempus arcu. Fusce blandit, nisl vitae consequat efficitur, tellus quam venenatis turpis, vitae mattis orci purus vitae eros. Nullam non accumsan lectus, at eleifend justo. Aenean malesuada ex leo, et efficitur quam pretium vel. Praesent volutpat, ipsum vel rhoncus gravida, massa tellus tincidunt dui, eget accumsan ipsum nibh quis arcu. Quisque ante neque, consequat ut sem id, vulputate finibus metus.</div>
-    <br>
+    <div>
+      <h2>Population Distributions by Race</h2>
 
-    <div id="2000heatMapContainer"></div>
-    <br>
+      <select id="selectRace" onchange="changeRaceContent()">
+        <option value="aian">American Indian and Alaska Native Alone
+        <option value="asian">Asian Alone
+        <option value="boaa">Black or African American Alone
+        <option value="multiRace">Multiracial
+        <option value="nhpi">Native Hawaiian and Other Pacific Islander Alone
+        <option value="otherRace">Some Other Race Alone
+        <option value="white">White Alone
+      </select>
 
-    <h1 id="newsHeading"></h1>
-    <div id="news"></div>
-    <br>
 
-    <h3>Increasing Diversity</h3>
-    <div id="comparisonContainer"></div>
 
-    <br>
+      <div id="2010heatMapContainer"></div><br>
 
-    <div>(Source: <a href="https://www.census.gov/data/developers/data-sets/decennial-census.2010.html" target="_blank">2010 United States Census</a> and <a href="https://www.census.gov/data/developers/data-sets/decennial-census.2000.html" target="_blank">2000 United States Census</a>)</div>
-  </div>
+      <div id="2000heatMapContainer"></div>
 
-  <div id="future">
-    <h2>Future Projections</h2>
-    <img src="img/future.png" alt="U.S. Census graphic showing projection that Non-Hispanic Whites May No Longer Comprise Over 50 Percent of the U.S. Population by 2044">
-    <div>(Source: <a href="https://www.census.gov/content/dam/Census/newsroom/releases/2015/cb15-tps16_graphic.pdf" target="_blank">2014 National Projections</a>)</div>
-    <br>
-    <div>Ut non leo vel felis sollicitudin laoreet non ac massa. Phasellus nec diam ante. Aenean eu nisl nec nunc bibendum viverra ac sed diam. In hac habitasse platea dictumst. Aliquam est dui, aliquet ut congue non, finibus mollis est. Maecenas a quam est. Aenean dictum tellus eu ex volutpat feugiat. Praesent non tortor pellentesque, facilisis leo et, tempor mi. Donec in elementum urna, euismod facilisis metus. Curabitur pulvinar laoreet tortor, eget mollis magna vulputate nec. Vestibulum euismod dui at congue congue. Ut orci leo, pellentesque et aliquam id, scelerisque in diam. Aliquam erat volutpat.</div>
+
+      <h3 id="newsHeading"></h3>
+      <div id="news"></div>
+
+
+      <h2>Increasing Diversity</h2>
+      <div id="comparisonContainer"></div>
+
+
+
+      <div>(Source: <a href="https://www.census.gov/data/developers/data-sets/decennial-census.2010.html" target="_blank">2010 United States Census</a> and <a href="https://www.census.gov/data/developers/data-sets/decennial-census.2000.html" target="_blank">2000 United States Census</a>)</div>
+    </div>
+
+    <div>
+      <h2>Future Projections</h2>
+      <img src="img/future.png" alt="U.S. Census graphic showing projection that Non-Hispanic Whites May No Longer Comprise Over 50 Percent of the U.S. Population by 2044" id="future">
+      <div>
+        <div>One common and quick measure of the nation's cultural landscape is that of majority-minority status. The Census Bureau made headlines when it released the graphic above, which shows their prediction that white Americans will lose majority status in the year 2044, a pivotal moment vehemently feared by white nationalists and eagerly anticipated by those who see it as an end to Republican dominance.</div>
+        <div>However, some researchers believe the Census Bureau's prediction is dangerous in its portrayal of demographic change as a zero-sum game with white Americans as the losers and even inaccurate in who it counts as "white."</div>
+        <div>Regardless, there is no doubt that America needs to reckon with its increasingly diverse population on both societal and individual levels - particularly now, in a time of heightened political polarization and racial tensions.</div>
+        <div>(Source: <a href="https://www.census.gov/content/dam/Census/newsroom/releases/2015/cb15-tps16_graphic.pdf" target="_blank">2014 National Projections</a> and <a href="https://www.nytimes.com/2018/11/22/us/white-americans-minority-population.html" target="_blank">The New York Times</a>)</div>
+      </div>
+    </div>
   </div>
 
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="crossorigin="anonymous"></script>
   <script src="js/config.js"></script>
-  <!--Start Highmaps-->
-    <script src="https://code.highcharts.com/maps/highmaps.js"></script>
-    <script src="https://code.highcharts.com/maps/modules/data.js"></script>
-    <script src="https://code.highcharts.com/maps/modules/exporting.js"></script>
-    <script src="https://code.highcharts.com/maps/modules/offline-exporting.js"></script>
-    <script src="https://code.highcharts.com/mapdata/countries/us/us-all.js"></script>
-  <!--End Highmaps-->
-  <!--Start Highcharts-->
-    <script src="https://code.highcharts.com/modules/exporting.js"></script>
-    <script src="https://code.highcharts.com/modules/export-data.js"></script>
-  <!--End Highcharts-->
-  <!--Start Responsive Horizontal Bar Chart jQuery Plugin-->
-    <script src="build/js/jquery.min.js"></script>
-    <script src="build/js/jquery.horizBarChart.min.js"></script>
-  <!--End Responsive Horizontal Bar Chart jQuery Plugin-->
+<!--Start Highmaps-->
+  <script src="https://code.highcharts.com/maps/highmaps.js"></script>
+  <script src="https://code.highcharts.com/maps/modules/data.js"></script>
+  <script src="https://code.highcharts.com/maps/modules/exporting.js"></script>
+  <script src="https://code.highcharts.com/maps/modules/offline-exporting.js"></script>
+  <script src="https://code.highcharts.com/mapdata/countries/us/us-all.js"></script>
+<!--End Highmaps-->
+<!--Start Highcharts-->
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+  <script src="https://code.highcharts.com/modules/export-data.js"></script>
+<!--End Highcharts-->
+<!--Start Responsive Horizontal Bar Chart jQuery Plugin-->
+  <script src="build/js/jquery.min.js"></script>
+  <script src="build/js/jquery.horizBarChart.min.js"></script>
+<!--End Responsive Horizontal Bar Chart jQuery Plugin-->
   <script src="js/scripts.js"></script>
 </body>
 </html>
