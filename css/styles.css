@@ -1,3 +1,12 @@
+/* Full bleed */
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
 html {
   box-sizing: border-box;
 }
@@ -6,6 +15,10 @@ html {
   font-size: 0.8em;
   line-height: 150%;
   margin: 0;
+}
+
+#header {
+  background-color: black;
 }
 
 #stats {
@@ -28,9 +41,28 @@ a:active {
   color: #e2e2e2;
 }
 
+#title, #header {
+  margin: 0;
+}
+
+#header {
+  padding: 3%;
+}
+
+#title {
+  max-width: 100vw;
+}
+
+#headerImg {
+  margin-top: 1.5%;
+  width: 90%;
+  height: auto;
+}
+
 h1 {
   font-size: 5vmax;
   margin-bottom: 5%;
+  color: white;
 }
 
 h1, h2, h3, h4 {
@@ -53,10 +85,15 @@ div {
   margin: 0 5% 0 5%;
 }
 
-#meltingpot, #future {
+#future {
   width: 100%;
   height: auto;
   margin-right: 0;
+}
+
+#heatMapContainer2010, #heatMapContainer2000 {
+  width: 100%;
+  height: auto;
 }
 
 /* START OF RELATED NEWS */
@@ -95,13 +132,26 @@ div {
   margin: 0 auto;
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 495px) {
   .main-container {
     width: 450px;
     margin: 0 auto;
   }
+  #title {
+    max-width: 55vw;
+  }
+  #headerImg {
+    width: 40%;
+    height: auto;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+  }
+  #header {
+    max-height: 330px;
+  }
   h1 {
-    font-size: 5.5vmax;
+    font-size: 5.3vmax;
   }
   h1, h2, h3, h4 {
     line-height: 120%;
@@ -112,16 +162,19 @@ div {
     line-height: 155%;
     margin: 2% 0% 2% 0%;
   }
-  #meltingpot, #future {
+  #future {
     float: left;
     height: auto;
     margin-right: 3.5%;
   }
-  #meltingpot {
-    width: 50%;
-  }
   #future {
     width: 100%;
+  }
+}
+
+@media screen and (min-width: 650px) {
+  #headerImg {
+    width: 30%;
   }
 }
 
@@ -129,8 +182,14 @@ div {
   .main-container {
     width: 720px;
   }
-  #meltingpot {
-    width: 20%;
+  #header {
+    min-height: 285px;
+  }
+  #title {
+    max-width: 60vw;
+  }
+  #headerImg {
+    width: 35%;
   }
   #future {
     width: 50%;
@@ -140,5 +199,15 @@ div {
     font-family: 'Merriweather', serif;
     font-size: 1.05em;
     line-height: 160%;
+  }
+  #heatMaps {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #heatMapContainer2010, #heatMapContainer2000 {
+    width: 50%;
+    height: auto;
+    margin: 1%;
   }
 }

@@ -561,7 +561,7 @@ $(function(){
         function makeAIANmap() {
           // MAKE 2010 MAP OF AMERICAN INDIAN AND ALASKA NATIVE POPULATION PERCENTAGES
           $.getJSON('js/2010_aian.json', function(data) {
-            Highcharts.mapChart('2010heatMapContainer', {
+            Highcharts.mapChart('heatMapContainer2010', {
                 chart: {
                     map: 'countries/us/us-all',
                     borderWidth: 0.8
@@ -615,7 +615,7 @@ $(function(){
 
           // MAKE 2000 MAP OF AMERICAN INDIAN AND ALASKA NATIVE POPULATION PERCENTAGES
           $.getJSON('js/2000_aian.json', function(data) {
-            Highcharts.mapChart('2000heatMapContainer', {
+            Highcharts.mapChart('heatMapContainer2000', {
                 chart: {
                     map: 'countries/us/us-all',
                     borderWidth: 0.8
@@ -670,7 +670,7 @@ $(function(){
         function makeAsianMap() {
           // MAKE 2010 MAP OF ASIAN POPULATION PERCENTAGES
           $.getJSON('js/2010_asian.json', function(data) {
-            Highcharts.mapChart('2010heatMapContainer', {
+            Highcharts.mapChart('heatMapContainer2010', {
                 chart: {
                     map: 'countries/us/us-all',
                     borderWidth: 0.8
@@ -724,7 +724,7 @@ $(function(){
 
           // MAKE 2000 MAP OF ASIAN POPULATION PERCENTAGES
           $.getJSON('js/2000_asian.json', function(data) {
-            Highcharts.mapChart('2000heatMapContainer', {
+            Highcharts.mapChart('heatMapContainer2000', {
                 chart: {
                     map: 'countries/us/us-all',
                     borderWidth: 0.8
@@ -779,7 +779,7 @@ $(function(){
         function makeBOAAmap() {
           // MAKE 2010 MAP OF BLACK OR AFRICAN AMERICAN ALONE POPULATION PERCENTAGES
           $.getJSON('js/2010_boaa.json', function(data) {
-            Highcharts.mapChart('2010heatMapContainer', {
+            Highcharts.mapChart('heatMapContainer2010', {
                 chart: {
                     map: 'countries/us/us-all',
                     borderWidth: 0.8
@@ -833,7 +833,7 @@ $(function(){
 
           // MAKE 2000 MAP OF BLACK OR AFRICAN AMERICAN ALONE POPULATION PERCENTAGES
           $.getJSON('js/2000_boaa.json', function(data) {
-            Highcharts.mapChart('2000heatMapContainer', {
+            Highcharts.mapChart('heatMapContainer2000', {
                 chart: {
                     map: 'countries/us/us-all',
                     borderWidth: 0.8
@@ -888,7 +888,7 @@ $(function(){
         function makeMultiRaceMap() {
           // MAKE 2010 MAP OF MULTIRACIAL POPULATION PERCENTAGES
           $.getJSON('js/2010_multiRace.json', function(data) {
-            Highcharts.mapChart('2010heatMapContainer', {
+            Highcharts.mapChart('heatMapContainer2010', {
                 chart: {
                     map: 'countries/us/us-all',
                     borderWidth: 0.8
@@ -942,7 +942,7 @@ $(function(){
 
           // MAKE 2000 MAP OF MULTIRACIAL POPULATION PERCENTAGES
           $.getJSON('js/2000_multiRace.json', function(data) {
-            Highcharts.mapChart('2000heatMapContainer', {
+            Highcharts.mapChart('heatMapContainer2000', {
                 chart: {
                     map: 'countries/us/us-all',
                     borderWidth: 0.8
@@ -997,7 +997,7 @@ $(function(){
         function makeNHPImap() {
           // MAKE 2010 MAP OF NATIVE HAWAIIAN AND OTHER PACIFIC ISLANDER ALONE POPULATION PERCENTAGES
           $.getJSON('js/2010_nhpi.json', function(data) {
-            Highcharts.mapChart('2010heatMapContainer', {
+            Highcharts.mapChart('heatMapContainer2010', {
                 chart: {
                     map: 'countries/us/us-all',
                     borderWidth: 0.8
@@ -1051,7 +1051,7 @@ $(function(){
 
           // MAKE 2000 MAP OF NATIVE HAWAIIAN AND OTHER PACIFIC ISLANDER ALONE POPULATION PERCENTAGES
           $.getJSON('js/2000_nhpi.json', function(data) {
-            Highcharts.mapChart('2000heatMapContainer', {
+            Highcharts.mapChart('heatMapContainer2000', {
                 chart: {
                     map: 'countries/us/us-all',
                     borderWidth: 0.8
@@ -1106,7 +1106,7 @@ $(function(){
         function makeOtherRaceMap() {
           // MAKE 2010 MAP OF SOME OTHER RACE ALONE POPULATION PERCENTAGES
           $.getJSON('js/2010_otherRace.json', function(data) {
-            Highcharts.mapChart('2010heatMapContainer', {
+            Highcharts.mapChart('heatMapContainer2010', {
                 chart: {
                     map: 'countries/us/us-all',
                     borderWidth: 0.8
@@ -1160,7 +1160,7 @@ $(function(){
 
           // MAKE 2000 MAP OF SOME OTHER RACE ALONE POPULATION PERCENTAGES
           $.getJSON('js/2000_otherRace.json', function(data) {
-            Highcharts.mapChart('2000heatMapContainer', {
+            Highcharts.mapChart('heatMapContainer2000', {
                 chart: {
                     map: 'countries/us/us-all',
                     borderWidth: 0.8
@@ -1215,7 +1215,7 @@ $(function(){
         function makeWhiteMap() {
           // MAKE 2010 MAP OF WHITE ALONE POPULATION PERCENTAGES
           $.getJSON('js/2010_white.json', function(data) {
-            Highcharts.mapChart('2010heatMapContainer', {
+            Highcharts.mapChart('heatMapContainer2010', {
                 chart: {
                     map: 'countries/us/us-all',
                     borderWidth: 0.8
@@ -1269,7 +1269,7 @@ $(function(){
 
           // MAKE 2000 MAP OF WHITE ALONE POPULATION PERCENTAGES
           $.getJSON('js/2000_white.json', function(data) {
-            Highcharts.mapChart('2000heatMapContainer', {
+            Highcharts.mapChart('heatMapContainer2000', {
                 chart: {
                     map: 'countries/us/us-all',
                     borderWidth: 0.8
