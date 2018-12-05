@@ -383,7 +383,7 @@ $(function(){
         }); // CLOSE CALL TO US CENSUS API FOR POPULATION COUNTS OF PEOPLE OF TWO OR MORE RACES
   // END 2000 US CENSUS API
 
-  makeAIANmap(); // ON INITIAL LOAD
+  changeRaceContent(); // ON INITIAL LOAD
 
 
   // START 2013 AMERICAN COMMUNITY SURVEY API
@@ -480,39 +480,82 @@ $(function(){
 
 }); // END OF DOCUMENT READY
 
-// START RACIAL HEAT MAP FUNCTIONS
-        function changeRaceMap() {
+        var query = '';
+        var newsHeading;
+
+        function changeRaceContent() {
             var selectedRace = document.getElementById("selectRace").value;
             if (selectedRace == "aian") {
               console.log("user wants to see the American Indian and Alaska Native Alone heat map");
               makeAIANmap();
+              // News
+              query = '"American+Indian+Alaska+Native"';
+              getNews();
+              newsHeading = '';
+              newsHeading += 'News Related to American Indian and Alaska Natives'
+              changeNewsHeading();
             }
             else if (selectedRace == "asian") {
               console.log("user wants to see the Asian Alone heat map");
               makeAsianMap();
+              // News
+              query = '"Asian+American"';
+              getNews();
+              newsHeading = '';
+              newsHeading += 'News Related to Asian Americans'
+              changeNewsHeading();
             }
             else if (selectedRace == "boaa") {
               console.log("user wants to see the Black or African American Alone heat map");
               makeBOAAmap();
+              // News
+              query = '"African+American"';
+              getNews();
+              newsHeading = '';
+              newsHeading += 'News Related to African Americans'
+              changeNewsHeading();
             }
             else if (selectedRace == "multiRace") {
               console.log("user wants to see the Multiracial heat map");
               makeMultiRaceMap();
+              // News
+              query = '"Multiracial+American"';
+              getNews();
+              newsHeading = '';
+              newsHeading += 'News Related to Multiracial Americans'
+              changeNewsHeading();
             }
             else if (selectedRace == "nhpi") {
               console.log("user wants to see the Native Hawaiian and Other Pacific Islander Alone heat map");
               makeNHPImap();
+              // News
+              query = 'Native+Hawaiian+Pacific+Islander';
+              getNews();
+              newsHeading = '';
+              newsHeading += 'News Related to Native Hawaiian and Other Pacific Islanders'
+              changeNewsHeading();
             }
             else if (selectedRace == "otherRace") {
               console.log("user wants to see the Some Other Race Alone heat map");
               makeOtherRaceMap();
+              // News
+              $('#news').html('');
+              newsHeading = '';
+              changeNewsHeading();
             }
             else if (selectedRace == "white") {
               console.log("user wants to see the White Alone heat map");
               makeWhiteMap();
+              // News
+              query = '"White+American"';
+              getNews();
+              newsHeading = '';
+              newsHeading += 'News Related to White Americans'
+              changeNewsHeading();
             }
         }
 
+// START RACIAL HEAT MAP FUNCTIONS
         function makeAIANmap() {
           // MAKE 2010 MAP OF AMERICAN INDIAN AND ALASKA NATIVE POPULATION PERCENTAGES
           $.getJSON('js/2010_aian.json', function(data) {
@@ -1277,3 +1320,43 @@ $(function(){
           }); // END OF MAKING 2000 MAP OF WHITE POPULATION PERCENTAGES
         }
 // END RACIAL HEAT MAP FUNCTIONS
+
+// START USING NEWS API
+        function getNews() {
+          var newsKey = config.NEWS_KEY;
+          var url = 'https://newsapi.org/v2/everything?' +
+                      'q=' + query + '&' +
+                      'sortBy=popularity&' +
+                      'apiKey=' + newsKey;
+          var data = [];
+          var html = '';
+          var articles = [];
+
+          $.ajax({
+            type: 'GET',
+            url: url,
+            dataType: 'json',
+            async: true,
+            data: data,
+            success: function(data){
+              console.log(data);
+              var articles = data.articles.slice(0, 3); // limit number of results
+              articles.forEach(function(article){
+                console.log(article.title);
+                html += '<div class="latest-news flex">';
+                  html += '<img class="thumbnail" src="' + article.urlToImage + '">';
+                  html += '<div class="text">';
+                    html += '<a href="' + article.url + '" target="_blank">';
+                    html += '<h2 class="headline">' + article.title + '</h2>';
+                    html += '<h4 class="byline">By ' + article.author + ' at <em>' + article.source.name + '</em></h4></a>';
+                  html += '</div>';
+                html += '</div>';
+              });
+              $('#news').html(html);
+            }
+          });
+        }
+        function changeNewsHeading() {
+          $('#newsHeading').html(newsHeading);
+        }
+// END USING NEWS API
